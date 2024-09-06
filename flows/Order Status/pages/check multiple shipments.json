@@ -1,0 +1,99 @@
+{
+  "name": "9a697cb0-63a7-47e2-bc36-8dba3c9f0b73",
+  "displayName": "check multiple shipments",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.order_status = $flow.tracking_status_cancelled",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eYour order placed on \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.order_date\u003c/say-as\u003e and \u003csay-as interpret-as=\"time\" format=\"hms12\"\u003e$flow.order_time\u003c/say-as\u003e is cancelled.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "check order notification enabled",
+    "name": "eb7b474d-ad5f-4a34-8d4b-3bd2c564005c"
+  }, {
+    "condition": "$flow.order_shipment_count \u003e 1",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.order_status = $flow.tracking_status_delivered",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eYour order had $flow.order_shipment_count shipments, which were all delivered by \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.latest_delivery_date\u003c/say-as\u003e.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.order_status = $flow.tracking_status_returned OR $flow.order_status = $flow.tracking_status_partially_returned",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eYour order placed on \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.order_date\u003c/say-as\u003e and \u003csay-as interpret-as=\"time\" format=\"hms12\"\u003e$flow.order_time\u003c/say-as\u003e was delivered on \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.latest_delivery_date\u003c/say-as\u003e is now $flow.order_status.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eYour order has $flow.order_shipment_count shipments, which will be delivered by \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.latest_delivery_date\u003c/say-as\u003e.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e confirm more shipment details needed",
+    "name": "dd8ead1a-49e9-4446-970d-3d8e3e678816"
+  }, {
+    "condition": "$flow.order_shipment_count = 1",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.order_status = $flow.tracking_status_delivered",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eYour order was delivered on \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.order_shipment_delivery_date[0]\u003c/say-as\u003e.\u003cspeak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.order_status = $flow.tracking_status_returned OR $flow.order_shipment_status[0] = $flow.tracking_status_partially_returned",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eYour order placed on \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.order_date\u003c/say-as\u003e and \u003csay-as interpret-as=\"time\" format=\"hms12\"\u003e$flow.order_time\u003c/say-as\u003e was delivered on \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.order_shipment_delivery_date[0]\u003c/say-as\u003e is now $flow.order_shipment_status[0].\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eYour order is $flow.order_status! You can expect it to be delivered by \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.shipment_estimated_delivery_date[0]\u003c/say-as\u003e.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e confirm SMS required",
+    "name": "99ab15b3-7fc1-44f3-a616-68d18ca86b23"
+  } ]
+}

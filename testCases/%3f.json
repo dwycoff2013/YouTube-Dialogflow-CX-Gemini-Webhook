@@ -1,0 +1,38 @@
+{
+  "name": "ceae46f9-83ed-4044-86dc-4652f2ee8d56",
+  "tags": [ "#!" ],
+  "displayName": "?",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "!" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1725572942,
+    "nanos": 791429000
+  },
+  "testConfig": {
+    "trackingParameters": [ "lmao, #gemini_ftw" ],
+    "flow": "Name Collection",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

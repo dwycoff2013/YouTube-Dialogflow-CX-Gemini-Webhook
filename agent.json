@@ -1,0 +1,58 @@
+{
+  "defaultLanguageCode": "en",
+  "timeZone": "America/Chicago",
+  "enableLogging": true,
+  "projectNumber": 622228999031,
+  "speechToTextSettings": {
+    "enableSpeechAdaptation": true
+  },
+  "startFlow": "Default Start Flow",
+  "enableStackdriverLogging": true,
+  "advancedSettings": {
+    "enabled": true,
+    "audioExportGcsDestination": {
+    
+    },
+    "speechSettings": {
+      "endpointerSensitivity": 90,
+      "noSpeechTimeout": {
+        "seconds": 10
+      },
+      "useTimeoutBasedEndpointing": true,
+      "models": [ {
+        "key": "en",
+        "value": "default"
+      } ]
+    },
+    "playbackInterruptionSettings": {
+    
+    },
+    "loggingSettings": {
+      "enableStackdriverLogging": true,
+      "enableInteractionLogging": true
+    }
+  },
+  "speakerIdSettings": {
+  
+  },
+  "textToSpeechSettings": {
+    "synthesizeSpeechConfigs": [ {
+      "key": "en",
+      "value": {
+        "voice": {
+          "name": "en-US-Studio-O",
+          "ssmlGender": "SSML_VOICE_GENDER_FEMALE"
+        }
+      }
+    } ]
+  },
+  "duplexSettings": {
+  
+  },
+  "answerFeedbackSettings": {
+  
+  },
+  "webClientSettings": {
+    "boxBorderRadius": "0"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "4e9dbc11-38d6-472e-aa4b-7e1af2ba304c",
+  "displayName": "\u003e get order details API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "cf56e827-2c25-4a45-a79a-c474b615fbe1",
+    "tag": "getOrderDetails"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.check_recent_order_details = \"true\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm recent order details",
+    "name": "e3767f36-08a3-47b8-bbc1-0d7d5048ca31"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check multiple shipments",
+    "name": "7cab7402-0305-41c8-b6c7-3c7cab317796"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "be2ceb51-3327-472e-b4c1-59d2aed95a20"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "bb0730a7-ba3a-496d-8b54-518a15bc2e10"
+  } ]
+}

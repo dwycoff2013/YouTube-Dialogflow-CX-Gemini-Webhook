@@ -1,0 +1,101 @@
+{
+  "name": "26a27ba0-f03a-4cb1-9d6a-5c5e1654b567",
+  "displayName": "Order Status",
+  "description": "Allows an authenticated user to check order and shipment status.",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_alternate_profile_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_alternate_profile",
+        "value": 2
+      }, {
+        "parameter": "$flow.order_id_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.product_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.shipment_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_shipment",
+        "value": 2
+      }, {
+        "parameter": "$flow.retry_order_number_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_order_number",
+        "value": 2
+      }, {
+        "parameter": "$flow.retry_another_order_id_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_another_order_id",
+        "value": 2
+      }, {
+        "parameter": "$flow.tracking_status_delivered",
+        "value": "delivered"
+      }, {
+        "parameter": "$flow.tracking_status_cancelled",
+        "value": "cancelled"
+      }, {
+        "parameter": "$flow.tracking_status_returned",
+        "value": "returned"
+      }, {
+        "parameter": "$flow.tracking_status_partially_returned",
+        "value": "partially returned"
+      }, {
+        "parameter": "$flow.duplicate_order_id",
+        "value": [ ]
+      }, {
+        "parameter": "$flow.shipment_index_counter",
+        "value": -1
+      }, {
+        "parameter": "$flow.retry_select_order_number_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_select_order_number",
+        "value": 2
+      } ]
+    },
+    "targetPage": "check phone number",
+    "name": "c111c950-34dd-452a-99fb-35d85ae8e854"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d3eaac64-8590-4a79-beb2-526d8cfaea76"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c4631aa2-bd55-4413-8c56-6d160d631c9b"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_MANUAL",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

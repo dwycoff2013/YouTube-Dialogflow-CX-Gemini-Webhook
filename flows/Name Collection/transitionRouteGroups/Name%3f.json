@@ -1,0 +1,20 @@
+{
+  "name": "8e16f8c6-7f8a-4f2b-82e5-2b4e06f6584b",
+  "displayName": "Name?",
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_full_name",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Can I have your full name, please?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "nextActionOverride": {
+      
+      }
+    },
+    "targetPage": "\u003e confirm full name",
+    "name": "e73ce936-c0ac-44a9-b612-9be9050413a4"
+  } ]
+}

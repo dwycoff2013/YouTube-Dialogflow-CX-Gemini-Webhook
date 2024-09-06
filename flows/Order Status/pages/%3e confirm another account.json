@@ -1,0 +1,121 @@
+{
+  "name": "86c329e4-bbbf-4ad5-a6d8-8b34dada04fa",
+  "displayName": "\u003e confirm another account",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Sorry we do not find any orders associated with your account under $session.params.user_first_name. Are you inquiring about another person's order? Please say yes if that's the case. Else say no." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes_1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "phone_number",
+        "value": null
+      }, {
+        "parameter": "user_first_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "check user identified",
+    "name": "c1cd2ca7-35f4-4fe8-a13a-df5a47de4021"
+  }, {
+    "intent": "prebuilt_components_confirmation_no_1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "ef9e7abe-45cd-462c-b32b-cdc4c310a23f"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent_1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "b4fe7e05-b4bb-4637-98e1-ebf515d9cad6"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "6846f7d5-c9e1-4d8e-9302-ef52f5279e28"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Are you inquiring about another person's order? Please say yes if that's the case. Else say no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "758ea3e2-6835-40ff-8e66-139836fa2b72"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Are you inquiring about another person's order? Please say yes if that's the case. Else say no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f4518dff-d115-48c8-ae94-5544991cf460"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "1274b7f5-dcfe-48ec-a118-2914313ebdd5"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Are you inquiring about another person's order? Please say yes if that's the case. Else say no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ff2f3ec8-dc0d-4334-9f28-26aeab575b9a"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Are you inquiring about another person's order? Please say yes if that's the case. Else say no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a39cac5f-581b-4c48-b7b5-0eadc892b361"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "bb923a62-7f0f-45a0-bc52-61af58b2ad50"
+  } ]
+}

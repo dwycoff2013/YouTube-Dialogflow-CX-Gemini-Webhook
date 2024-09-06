@@ -1,0 +1,181 @@
+{
+  "name": "7d2592ee-5b7d-4453-a4a7-9b7bb28e2c8b",
+  "displayName": "Name",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "..?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "help?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "..?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "what is the current page?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hello?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "\u003e collect full name",
+        "flow": "Name Collection"
+      },
+      "textResponses": [ {
+        "text": [ "Hi! How can I help you today?" ]
+      }, {
+        "text": [ ".." ]
+      }, {
+        "text": [ "What is your full name? Please tell us your first, last, and middle name, if you have one." ]
+      } ],
+      "currentFlow": {
+        "name": "Name Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Daniel Aaron Wycoff"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_name_collection_full_name"
+      },
+      "currentPage": {
+        "name": "\u003e confirm full name",
+        "flow": "Name Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Name Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes"
+      },
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ " Thank you, Daniel." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Next?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "..." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1725573430,
+    "nanos": 330615000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

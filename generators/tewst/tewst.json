@@ -1,0 +1,13 @@
+{
+  "name": "2c1e48b3-ebba-46d9-9f10-ab34d7e8b06f",
+  "displayName": "tewst",
+  "modelParameter": {
+    "temperature": 0.5,
+    "maxDecodeSteps": 128,
+    "topP": 0.94999999,
+    "topK": 40
+  },
+  "llmModelSettings": {
+    "model": "gemini-1.5-flash"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "name": "7347ae06-cca5-4e1f-9b7b-70f2251313e4",
+  "displayName": "\u003e confirm more shipment details needed",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Would you like to hear more about these shipments?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes_1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "multiple shipment messages",
+    "name": "b5a68da9-405c-4224-8775-a7c1c2a6ef18"
+  }, {
+    "intent": "prebuilt_components_confirmation_no_1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check order notification enabled",
+    "name": "ad7da167-ca3f-4f0e-a586-bbb6ec0c3e76"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent_1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reasoon",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "158bd5a8-76a6-415f-b4d3-74297581f219"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "51a90ebe-5034-4f41-83b2-a10a70a3b539"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Would you like to hear more about these shipments?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "699c2551-f139-4019-bbaf-34bf8a800d79"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Would you like to hear more about these shipments?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "12dde56f-3a49-4031-b130-20ef1e2ecdb9"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "3fd87cad-99e6-4531-b928-3249f7c89b9c"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Would you like to hear more about these shipments?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "70143597-76d4-45db-9544-a2575282e6b3"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we are still not getting that. Would you like to hear more about these shipments?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e6593947-ea91-4eb7-a0d9-a0a53ccd3fcf"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "e03796ea-7f91-4a59-9330-1926d2eaed25"
+  } ]
+}

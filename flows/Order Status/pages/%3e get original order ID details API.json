@@ -1,0 +1,57 @@
+{
+  "name": "0b031ff9-586e-4432-9aa0-c4bf3a82a4e7",
+  "displayName": "\u003e get original order ID details API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "10edad9f-613d-455d-a839-c5671d4ad88f",
+    "tag": "verifyUser"
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eAs per our records, we have found $sys.func.COUNT($flow.duplicate_order_id) orders ending with same 5 digits \u003csay-as interpret-as=\"verbatim\"\u003e$flow.user_provided_last_five_digit_of_order_id\u003c/say-as\u003e. Which order are you looking for?\u003cbreak time=\"1s\"/\u003e Order number 1 which was placed on \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.all_order_date[0]\u003c/say-as\u003e at \u003csay-as interpret-as=\"time\" format=\"hms12\"\u003e$flow.all_order_time[0]\u003c/say-as\u003e\u003cbreak time=\"1s\"/\u003e or Order number 2 which was placed on \u003csay-as interpret-as=\"date\" format=\"yyyymmdd\" detail=\"1\"\u003e$flow.all_order_date[1]\u003c/say-as\u003e at \u003csay-as interpret-as=\"time\" format=\"hms12\"\u003e$flow.all_order_time[1]\u003c/say-as\u003e.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect user selected order id",
+    "name": "b5e5f2f9-df7e-409a-ace7-5b131ca96257"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "99d5184b-2dc0-4cb9-8726-fcfe84cfb6c3"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "1300a460-faac-4de4-875a-d2dd6b680b0b"
+  } ]
+}

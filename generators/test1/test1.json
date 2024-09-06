@@ -1,0 +1,13 @@
+{
+  "name": "df2de165-059b-4b0f-8438-f1664a2e7af5",
+  "displayName": "test1",
+  "modelParameter": {
+    "temperature": 1.9,
+    "maxDecodeSteps": 8192,
+    "topP": 0.94999999,
+    "topK": 40
+  },
+  "llmModelSettings": {
+    "model": "gemini-1.5-flash"
+  }
+}

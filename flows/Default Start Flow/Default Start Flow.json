@@ -1,0 +1,55 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "transitionRoutes": [ {
+    "intent": "Default Welcome Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hello! Welcome to E. Orum Young Law. How can I help?", "Hi! How can I help you today?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
+    },
+    "targetFlow": "Name Collection",
+    "name": "4d0ddea1-38e3-423d-8a20-1c0b33481318"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
+    },
+    "name": "8dd55b91-1dfc-4ee1-aea2-83a8d6e8e6cd"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "2c2f530f-7be1-486e-be7e-c21ecdf949f8"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  },
+  "nluSettingsList": [ {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "customConfigKey": "f161816a-d94f-4705-a578-d19407fa1a89",
+    "languageCode": "en"
+  } ]
+}

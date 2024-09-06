@@ -1,0 +1,28 @@
+{
+  "name": "293d3a85-80a7-4ef7-a6f0-e05066ab1ecb",
+  "displayName": "check phone number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.phone_number != null AND $session.params.user_first_name != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check order count",
+    "name": "11f3c0c2-6f37-4048-8807-5f81f2732390"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "phone_number",
+        "value": "$request.payload.telephony. caller_id"
+      } ]
+    },
+    "targetPage": "check user identified",
+    "name": "8c5a3760-685a-4de0-8766-9e8da57df4b9"
+  } ]
+}

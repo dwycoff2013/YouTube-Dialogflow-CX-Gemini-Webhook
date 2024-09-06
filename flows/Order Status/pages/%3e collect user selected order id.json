@@ -1,0 +1,174 @@
+{
+  "name": "2f7324ed-df86-4d2c-8b35-2a17d7e56854",
+  "displayName": "\u003e collect user selected order id",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.order_option",
+      "required": true,
+      "entityType": "@sys.number-integer",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. To select order number one say 1, to select order number two, say 2. Else say No." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "d81f79c7-9fad-45e3-89e6-2495e06ac1ae"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. To select order number one say 1, to select order number two, say 2. Else say No." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "6ac132aa-d4bf-4c93-88f2-398ee5c7cc23"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we're still not getting that. To select order number one say 1, to select order number two, say 2. Else say No." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "06d52423-09c8-45fc-aac6-105517ccc067"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "15f2d003-6e0d-483d-820d-3f71c5f91aa9"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. To select order number one say 1, to select order number two, say 2. Else say No." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "e0d7cdfa-de2d-4527-9c0a-e206148ac47a"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "d83299d3-f6c2-41eb-afcd-0ce0e74de195"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "To select order number one say 1, to select order number two, say 2. Else say No." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_no_1",
+    "condition": "$flow.retry_order_number_counter \u003c $flow.max_retry_order_number",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "user_provided_last_five_digit_of_order_id",
+        "value": null
+      }, {
+        "parameter": "$flow.retry_order_number_counter",
+        "value": "$sys.func.ADD($flow.retry_order_number_counter,1)"
+      }, {
+        "parameter": "$flow.order_id_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect order ID",
+    "name": "0c5b75ba-9534-4bda-a60a-45b2476fd5e9"
+  }, {
+    "intent": "prebuilt_components_confirmation_no_1",
+    "condition": "$flow.retry_order_number_counter = $flow.max_retry_order_number",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "bf0a4828-0858-41f5-9b98-ed0f1e2258d7"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent_1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "0ff061f9-21bf-4349-91dd-54270265a30c"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "d833e923-afe6-46d7-913b-daa4d49c6bc6"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.order_option \u003e 0 AND $flow.order_option \u003c= 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.order_option_index",
+        "value": "$sys.func.MINUS($sys.func.TO_NUMBER($flow.order_option),1)"
+      }, {
+        "parameter": "$flow.order_id",
+        "value": "$flow.duplicate_order_id[$sys.func.TO_NUMBER($flow.order_option_index)]"
+      } ]
+    },
+    "targetPage": "\u003e get order details API",
+    "name": "dd2dca76-2b88-4d9e-8817-33cc1377ca7d"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.retry_select_order_number_counter \u003c $flow.max_retry_select_order_number",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "It's not a match. Please say the correct order number." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.order_option",
+        "value": null
+      }, {
+        "parameter": "$flow.retry_select_order_number_counter",
+        "value": "$sys.func.ADD($flow.retry_select_order_number_counter,1)"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "f284035d-777f-4bfd-a026-43d78b16694b"
+  }, {
+    "condition": "$flow.retry_select_order_number_counter = $flow.max_retry_select_order_number AND $page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "e07f1a21-d178-4088-b5db-244f7049ae5a"
+  } ]
+}

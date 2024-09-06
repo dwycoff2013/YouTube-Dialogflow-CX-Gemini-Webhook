@@ -1,0 +1,51 @@
+{
+  "fallbackSettings": {
+    "selectedPrompt": "Example"
+  },
+  "generativeSafetySettings": {
+    "raiSettings": {
+      "categoryFilters": [ {
+        "category": "DANGEROUS_CONTENT",
+        "filterLevel": "BLOCK_FEW"
+      }, {
+        "category": "SEXUALLY_EXPLICIT_CONTENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HARASSMENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HATE_SPEECH",
+        "filterLevel": "BLOCK_SOME"
+      } ]
+    },
+    "defaultRaiSettings": {
+      "categoryFilters": [ {
+        "category": "DANGEROUS_CONTENT",
+        "filterLevel": "BLOCK_FEW"
+      }, {
+        "category": "SEXUALLY_EXPLICIT_CONTENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HARASSMENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HATE_SPEECH",
+        "filterLevel": "BLOCK_SOME"
+      } ]
+    }
+  },
+  "languageCode": "en",
+  "knowledgeConnectorSettings": {
+    "business": "E. Orum Young Law, LLC",
+    "agent": "E-O-Y Assistant",
+    "agentIdentity": "Phone Assistant",
+    "businessDescription": "Louisiana's largest bankruptcy law firm, 200 Washington St, Monroe.",
+    "agentScope": "over-the-phone",
+    "mainLlmConfig": {
+      "configSet": "gemini_15_flash_001"
+    }
+  },
+  "llmModelSettings": {
+    "model": "gemini-pro"
+  }
+}

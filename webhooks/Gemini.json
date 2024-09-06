@@ -1,0 +1,10 @@
+{
+  "name": "7c995da7-11e5-4e61-b29d-61d1e09eedd6",
+  "displayName": "Gemini",
+  "genericWebService": {
+    "uri": "https://9b62-104-189-218-186.ngrok-free.app/dialogflow/webhook"
+  },
+  "timeout": {
+    "seconds": 20
+  }
+}

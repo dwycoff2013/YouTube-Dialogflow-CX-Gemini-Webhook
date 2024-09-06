@@ -1,0 +1,28 @@
+{
+  "name": "1272569b-9032-42c7-a70f-236a0f2062f1",
+  "displayName": "check duplicate order ID exists",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.COUNT($flow.duplicate_order_id) = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.order_id",
+        "value": "$flow.duplicate_order_id"
+      } ]
+    },
+    "targetPage": "\u003e get order details API",
+    "name": "e83473b5-9ae9-40aa-b890-4eb82fa3a73e"
+  }, {
+    "condition": "$sys.func.COUNT($flow.duplicate_order_id) \u003e 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e get original order ID details API",
+    "name": "1243b23a-0af5-4bf1-93ad-85171c2b2c74"
+  } ]
+}
