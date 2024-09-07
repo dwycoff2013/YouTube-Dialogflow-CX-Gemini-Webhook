@@ -12,6 +12,15 @@
       }
     },
     "virtualAgentOutput": {
+      "sessionParameters": {
+        "chatHistory": [ {
+          "parts": [ "..?" ],
+          "role": "user"
+        }, {
+          "parts": [ "." ],
+          "role": "model"
+        } ]
+      },
       "currentPage": {
         "name": "Start Page",
         "flow": "Default Start Flow"
@@ -21,7 +30,16 @@
       } ],
       "currentFlow": {
         "name": "Default Start Flow"
-      }
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "..?"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "."
+        }
+      } ]
     }
   }, {
     "userInput": {
@@ -34,16 +52,40 @@
       }
     },
     "virtualAgentOutput": {
+      "sessionParameters": {
+        "chatHistory": [ {
+          "parts": [ "..?" ],
+          "role": "user"
+        }, {
+          "parts": [ "." ],
+          "role": "model"
+        }, {
+          "parts": [ "help?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "role": "model"
+        } ]
+      },
       "currentPage": {
         "name": "Start Page",
         "flow": "Default Start Flow"
       },
       "textResponses": [ {
-        "text": [ "..?" ]
+        "text": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ]
       } ],
       "currentFlow": {
         "name": "Default Start Flow"
-      }
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "help?"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web."
+        }
+      } ]
     }
   }, {
     "userInput": {
@@ -56,16 +98,46 @@
       }
     },
     "virtualAgentOutput": {
+      "sessionParameters": {
+        "chatHistory": [ {
+          "parts": [ "..?" ],
+          "role": "user"
+        }, {
+          "parts": [ "." ],
+          "role": "model"
+        }, {
+          "parts": [ "help?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "role": "model"
+        }, {
+          "parts": [ "what is the current page?" ],
+          "role": "user"
+        }, {
+          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "role": "model"
+        } ]
+      },
       "currentPage": {
         "name": "Start Page",
         "flow": "Default Start Flow"
       },
       "textResponses": [ {
-        "text": [ "." ]
+        "text": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ]
       } ],
       "currentFlow": {
         "name": "Default Start Flow"
-      }
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "what is the current page?"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?"
+        }
+      } ]
     }
   }, {
     "userInput": {
@@ -78,6 +150,50 @@
       }
     },
     "virtualAgentOutput": {
+      "sessionParameters": {
+        "$flow.collect_part": "first name",
+        "$flow.failure_msg": "Sorry, we are having difficulty understanding your response.",
+        "$flow.first_name_part_spell_out_counter": 0,
+        "$flow.first_name_spell_out_counter": 0,
+        "$flow.incorrect_first_name_counter": 0,
+        "$flow.incorrect_first_name_part_counter": 0,
+        "$flow.incorrect_last_name_counter": 0,
+        "$flow.incorrect_last_name_part_counter": 0,
+        "$flow.incorrect_middle_name_counter": 0,
+        "$flow.incorrect_middle_name_part_counter": 0,
+        "$flow.incorrect_next_part_counter": 0,
+        "$flow.is_select_initial_path": true,
+        "$flow.last_name_spell_out_counter": 0,
+        "$flow.last_prompt": "What is your full name? Please tell us your first, last, and middle name, if you have one.",
+        "$flow.middle_name_spell_out_counter": 0,
+        "$flow.name_separator_counter": 0,
+        "$flow.waiting_room_counter": 0,
+        "chatHistory": [ {
+          "parts": [ "..?" ],
+          "role": "user"
+        }, {
+          "parts": [ "." ],
+          "role": "model"
+        }, {
+          "parts": [ "help?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "role": "model"
+        }, {
+          "parts": [ "what is the current page?" ],
+          "role": "user"
+        }, {
+          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "role": "model"
+        }, {
+          "parts": [ "hello?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ],
+          "role": "model"
+        } ]
+      },
       "triggeredIntent": {
         "name": "Default Welcome Intent"
       },
@@ -86,15 +202,24 @@
         "flow": "Name Collection"
       },
       "textResponses": [ {
-        "text": [ "Hi! How can I help you today?" ]
+        "text": [ "Hello! Welcome to E. Orum Young Law. How can I help?" ]
       }, {
-        "text": [ ".." ]
+        "text": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ]
       }, {
         "text": [ "What is your full name? Please tell us your first, last, and middle name, if you have one." ]
       } ],
       "currentFlow": {
         "name": "Name Collection"
-      }
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "hello?"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "Hello! Welcome to E. Orum Young Law. How can I help?\nHello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!\nWhat is your full name? Please tell us your first, last, and middle name, if you have one."
+        }
+      } ]
     }
   }, {
     "userInput": {
@@ -107,6 +232,57 @@
       }
     },
     "virtualAgentOutput": {
+      "sessionParameters": {
+        "$flow.collect_part": "first name",
+        "$flow.count": 3,
+        "$flow.failure_msg": "Sorry, we are having difficulty understanding your response.",
+        "$flow.first_name_part_spell_out_counter": 0,
+        "$flow.first_name_spell_out_counter": 0,
+        "$flow.format_first_name": "Daniel",
+        "$flow.format_last_name": "Aaron",
+        "$flow.format_middle_name": "Wycoff",
+        "$flow.full_name_separate": "Daniel/Aaron/Wycoff",
+        "$flow.incorrect_first_name_counter": 0,
+        "$flow.incorrect_first_name_part_counter": 0,
+        "$flow.incorrect_last_name_counter": 0,
+        "$flow.incorrect_last_name_part_counter": 0,
+        "$flow.incorrect_middle_name_counter": 0,
+        "$flow.incorrect_middle_name_part_counter": 0,
+        "$flow.incorrect_next_part_counter": 0,
+        "$flow.is_select_initial_path": true,
+        "$flow.last_name_spell_out_counter": 0,
+        "$flow.last_prompt": "\u003cspeak\u003e To confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is  \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did I spell your full name correctly?  \u003c/speak\u003e",
+        "$flow.middle_name_spell_out_counter": 0,
+        "$flow.name_separator_counter": 0,
+        "$flow.split_full_name": [ "Daniel", "Aaron", "Wycoff" ],
+        "$flow.user_provided_full_name.name.name": "Daniel Aaron Wycoff",
+        "$flow.waiting_room_counter": 0,
+        "chatHistory": [ {
+          "parts": [ "..?" ],
+          "role": "user"
+        }, {
+          "parts": [ "." ],
+          "role": "model"
+        }, {
+          "parts": [ "help?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "role": "model"
+        }, {
+          "parts": [ "what is the current page?" ],
+          "role": "user"
+        }, {
+          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "role": "model"
+        }, {
+          "parts": [ "hello?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ],
+          "role": "model"
+        } ]
+      },
       "triggeredIntent": {
         "name": "prebuilt_components_name_collection_full_name"
       },
@@ -119,7 +295,16 @@
       } ],
       "currentFlow": {
         "name": "Name Collection"
-      }
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "Daniel Aaron Wycoff"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e"
+        }
+      } ]
     }
   }, {
     "userInput": {
@@ -132,19 +317,90 @@
       }
     },
     "virtualAgentOutput": {
+      "sessionParameters": {
+        "$flow.collect_part": "first name",
+        "$flow.count": 3,
+        "$flow.failure_msg": "Sorry, we are having difficulty understanding your response.",
+        "$flow.first_name_part_spell_out_counter": 0,
+        "$flow.first_name_spell_out_counter": 0,
+        "$flow.format_first_name": "Daniel",
+        "$flow.format_last_name": "Aaron",
+        "$flow.format_middle_name": "Wycoff",
+        "$flow.full_name_separate": "Daniel/Aaron/Wycoff",
+        "$flow.incorrect_first_name_counter": 0,
+        "$flow.incorrect_first_name_part_counter": 0,
+        "$flow.incorrect_last_name_counter": 0,
+        "$flow.incorrect_last_name_part_counter": 0,
+        "$flow.incorrect_middle_name_counter": 0,
+        "$flow.incorrect_middle_name_part_counter": 0,
+        "$flow.incorrect_next_part_counter": 0,
+        "$flow.is_select_initial_path": true,
+        "$flow.last_name_spell_out_counter": 0,
+        "$flow.last_prompt": "\u003cspeak\u003e To confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is  \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did I spell your full name correctly?  \u003c/speak\u003e",
+        "$flow.middle_name_spell_out_counter": 0,
+        "$flow.name_separator_counter": 0,
+        "$flow.split_full_name": [ "Daniel", "Aaron", "Wycoff" ],
+        "$flow.user_provided_first_name": "Daniel",
+        "$flow.user_provided_full_name.name.name": "Daniel Aaron Wycoff",
+        "$flow.user_provided_last_name": "Aaron",
+        "$flow.user_provided_middle_name": "Wycoff",
+        "$flow.waiting_room_counter": 0,
+        "chatHistory": [ {
+          "parts": [ "..?" ],
+          "role": "user"
+        }, {
+          "parts": [ "." ],
+          "role": "model"
+        }, {
+          "parts": [ "help?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "role": "model"
+        }, {
+          "parts": [ "what is the current page?" ],
+          "role": "user"
+        }, {
+          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "role": "model"
+        }, {
+          "parts": [ "hello?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ],
+          "role": "model"
+        }, {
+          "parts": [ "yes" ],
+          "role": "user"
+        }, {
+          "parts": [ "Great! How can I assist you today?\n\nHere are some examples of things I can help you with:\n\n* Answer your questions on a wide range of topics\n* Translate text and speech between over 100 languages\n* Write different kinds of creative content, such as poems, songs, and stories\n* Provide summaries of articles, books, and other long pieces of text\n* Answer math problems at all levels, from basic arithmetic to calculus\n* Help with tasks, such as setting alarms, creating lists, and finding information on the web\n\nJust let me know what you need help with and I'll do my best to assist you." ],
+          "role": "model"
+        } ]
+      },
       "triggeredIntent": {
         "name": "prebuilt_components_confirmation_yes"
       },
       "currentPage": {
-        "name": "Start Page",
-        "flow": "Default Start Flow"
+        "name": "\u003e confirm full name",
+        "flow": "Name Collection"
       },
       "textResponses": [ {
-        "text": [ " Thank you, Daniel." ]
+        "text": [ "Great! How can I assist you today?\n\nHere are some examples of things I can help you with:\n\n* Answer your questions on a wide range of topics\n* Translate text and speech between over 100 languages\n* Write different kinds of creative content, such as poems, songs, and stories\n* Provide summaries of articles, books, and other long pieces of text\n* Answer math problems at all levels, from basic arithmetic to calculus\n* Help with tasks, such as setting alarms, creating lists, and finding information on the web\n\nJust let me know what you need help with and I'll do my best to assist you." ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
       } ],
       "currentFlow": {
-        "name": "Default Start Flow"
-      }
+        "name": "Name Collection"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "yes"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "Great! How can I assist you today?\n\nHere are some examples of things I can help you with:\n\n* Answer your questions on a wide range of topics\n* Translate text and speech between over 100 languages\n* Write different kinds of creative content, such as poems, songs, and stories\n* Provide summaries of articles, books, and other long pieces of text\n* Answer math problems at all levels, from basic arithmetic to calculus\n* Help with tasks, such as setting alarms, creating lists, and finding information on the web\n\nJust let me know what you need help with and I'll do my best to assist you.\n\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e"
+        }
+      } ]
     }
   }, {
     "userInput": {
@@ -157,16 +413,74 @@
       }
     },
     "virtualAgentOutput": {
+      "sessionParameters": {
+        "$flow.failure_message": "Sorry, we are having difficulty understanding your response.",
+        "$flow.incorrect_phonenumber_counter": 0,
+        "$flow.invalid_cc_counter": 0,
+        "$flow.invalid_input_counter": 0,
+        "$flow.invalid_phonenumber_counter": 0,
+        "$flow.last_prompt": "What is your country name or code?",
+        "$flow.playback_counter": 0,
+        "$flow.replay_counter": 0,
+        "$flow.reset_counter": 0,
+        "$flow.waiting_room_counter": 0,
+        "$flow.wrong_country_code_counter": 0,
+        "$request.generative.response": "I am not sure what you mean by \"Next?\". Can you please clarify?",
+        "chatHistory": [ {
+          "parts": [ "..?" ],
+          "role": "user"
+        }, {
+          "parts": [ "." ],
+          "role": "model"
+        }, {
+          "parts": [ "help?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "role": "model"
+        }, {
+          "parts": [ "what is the current page?" ],
+          "role": "user"
+        }, {
+          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "role": "model"
+        }, {
+          "parts": [ "hello?" ],
+          "role": "user"
+        }, {
+          "parts": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ],
+          "role": "model"
+        }, {
+          "parts": [ "yes" ],
+          "role": "user"
+        }, {
+          "parts": [ "Great! How can I assist you today?\n\nHere are some examples of things I can help you with:\n\n* Answer your questions on a wide range of topics\n* Translate text and speech between over 100 languages\n* Write different kinds of creative content, such as poems, songs, and stories\n* Provide summaries of articles, books, and other long pieces of text\n* Answer math problems at all levels, from basic arithmetic to calculus\n* Help with tasks, such as setting alarms, creating lists, and finding information on the web\n\nJust let me know what you need help with and I'll do my best to assist you." ],
+          "role": "model"
+        } ]
+      },
       "currentPage": {
-        "name": "Start Page",
-        "flow": "Default Start Flow"
+        "name": "\u003e collect country code",
+        "flow": "Telephone Number Collection"
       },
       "textResponses": [ {
-        "text": [ "..." ]
+        "text": [ "I am not sure what you mean by \"Next?\". Can you please clarify?" ],
+        "containAiGeneratedContent": true,
+        "containGenerativeFallback": true
+      }, {
+        "text": [ "What is your country name or code?" ]
       } ],
       "currentFlow": {
-        "name": "Default Start Flow"
-      }
+        "name": "Telephone Number Collection"
+      },
+      "actions": [ {
+        "userUtterance": {
+          "text": "Next?"
+        }
+      }, {
+        "agentUtterance": {
+          "text": "I am not sure what you mean by \"Next?\". Can you please clarify?\nWhat is your country name or code?"
+        }
+      } ]
     }
   } ],
   "creationTime": {

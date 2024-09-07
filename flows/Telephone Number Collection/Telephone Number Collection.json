@@ -101,6 +101,7 @@
     "name": "c29b4034-2c04-465e-8a8e-968c128ae9d2"
   } ],
   "eventHandlers": [ {
+    "targetPage": "\u003e collect country code",
     "event": "sys.no-match-default",
     "triggerFulfillment": {
       "messages": [ {
@@ -108,7 +109,13 @@
           "text": [ "We didn't get that. Can you say it again?", "we missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
         },
         "languageCode": "en"
-      } ]
+      } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "enableGenerativeFallback": true,
+      "nextActionOverride": {
+      
+      }
     },
     "name": "da197ff5-f0fc-40a0-bb45-1a8cae15b34c"
   }, {
@@ -133,5 +140,14 @@
   },
   "advancedSettings": {
     "enabled": true
-  }
+  },
+  "nluSettingsList": [ {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    },
+    "languageCode": "en"
+  } ]
 }
