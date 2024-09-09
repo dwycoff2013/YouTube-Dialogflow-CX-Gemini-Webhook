@@ -5,7 +5,7 @@
     "parameters": [ {
       "displayName": "$flow.channel",
       "required": true,
-      "entityType": "@prebuilt_components_channel_email_phone",
+      "entityType": "@sys.any",
       "fillBehavior": {
         "initialPromptFulfillment": {
         

@@ -1,6 +1,5 @@
 {
   "name": "3a4b1d60-67be-43e4-9906-aeaf45a1640c",
   "displayName": "prebuilt_components_name_collection_first_name",
-  "kind": "KIND_LIST",
-  "autoExpansionMode": "AUTO_EXPANSION_MODE_DEFAULT"
+  "kind": "KIND_MAP"
 }

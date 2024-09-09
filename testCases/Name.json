@@ -63,7 +63,7 @@
           "parts": [ "help?" ],
           "role": "user"
         }, {
-          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "parts": [ "h" ],
           "role": "model"
         } ]
       },
@@ -72,7 +72,7 @@
         "flow": "Default Start Flow"
       },
       "textResponses": [ {
-        "text": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ]
+        "text": [ "h" ]
       } ],
       "currentFlow": {
         "name": "Default Start Flow"
@@ -83,7 +83,7 @@
         }
       }, {
         "agentUtterance": {
-          "text": "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web."
+          "text": "h"
         }
       } ]
     }
@@ -109,13 +109,13 @@
           "parts": [ "help?" ],
           "role": "user"
         }, {
-          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "parts": [ "h" ],
           "role": "model"
         }, {
           "parts": [ "what is the current page?" ],
           "role": "user"
         }, {
-          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "parts": [ "e" ],
           "role": "model"
         } ]
       },
@@ -124,7 +124,7 @@
         "flow": "Default Start Flow"
       },
       "textResponses": [ {
-        "text": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ]
+        "text": [ "e" ]
       } ],
       "currentFlow": {
         "name": "Default Start Flow"
@@ -135,7 +135,7 @@
         }
       }, {
         "agentUtterance": {
-          "text": "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?"
+          "text": "e"
         }
       } ]
     }
@@ -178,19 +178,19 @@
           "parts": [ "help?" ],
           "role": "user"
         }, {
-          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "parts": [ "h" ],
           "role": "model"
         }, {
           "parts": [ "what is the current page?" ],
           "role": "user"
         }, {
-          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "parts": [ "e" ],
           "role": "model"
         }, {
           "parts": [ "hello?" ],
           "role": "user"
         }, {
-          "parts": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ],
+          "parts": [ "l" ],
           "role": "model"
         } ]
       },
@@ -204,7 +204,7 @@
       "textResponses": [ {
         "text": [ "Hello! Welcome to E. Orum Young Law. How can I help?" ]
       }, {
-        "text": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ]
+        "text": [ "l" ]
       }, {
         "text": [ "What is your full name? Please tell us your first, last, and middle name, if you have one." ]
       } ],
@@ -217,7 +217,7 @@
         }
       }, {
         "agentUtterance": {
-          "text": "Hello! Welcome to E. Orum Young Law. How can I help?\nHello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!\nWhat is your full name? Please tell us your first, last, and middle name, if you have one."
+          "text": "Hello! Welcome to E. Orum Young Law. How can I help?\nl\nWhat is your full name? Please tell us your first, last, and middle name, if you have one."
         }
       } ]
     }
@@ -267,19 +267,19 @@
           "parts": [ "help?" ],
           "role": "user"
         }, {
-          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "parts": [ "h" ],
           "role": "model"
         }, {
           "parts": [ "what is the current page?" ],
           "role": "user"
         }, {
-          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "parts": [ "e" ],
           "role": "model"
         }, {
           "parts": [ "hello?" ],
           "role": "user"
         }, {
-          "parts": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ],
+          "parts": [ "l" ],
           "role": "model"
         } ]
       },
@@ -355,25 +355,25 @@
           "parts": [ "help?" ],
           "role": "user"
         }, {
-          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "parts": [ "h" ],
           "role": "model"
         }, {
           "parts": [ "what is the current page?" ],
           "role": "user"
         }, {
-          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "parts": [ "e" ],
           "role": "model"
         }, {
           "parts": [ "hello?" ],
           "role": "user"
         }, {
-          "parts": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ],
+          "parts": [ "l" ],
           "role": "model"
         }, {
           "parts": [ "yes" ],
           "role": "user"
         }, {
-          "parts": [ "Great! How can I assist you today?\n\nHere are some examples of things I can help you with:\n\n* Answer your questions on a wide range of topics\n* Translate text and speech between over 100 languages\n* Write different kinds of creative content, such as poems, songs, and stories\n* Provide summaries of articles, books, and other long pieces of text\n* Answer math problems at all levels, from basic arithmetic to calculus\n* Help with tasks, such as setting alarms, creating lists, and finding information on the web\n\nJust let me know what you need help with and I'll do my best to assist you." ],
+          "parts": [ "l" ],
           "role": "model"
         } ]
       },
@@ -385,7 +385,7 @@
         "flow": "Name Collection"
       },
       "textResponses": [ {
-        "text": [ "Great! How can I assist you today?\n\nHere are some examples of things I can help you with:\n\n* Answer your questions on a wide range of topics\n* Translate text and speech between over 100 languages\n* Write different kinds of creative content, such as poems, songs, and stories\n* Provide summaries of articles, books, and other long pieces of text\n* Answer math problems at all levels, from basic arithmetic to calculus\n* Help with tasks, such as setting alarms, creating lists, and finding information on the web\n\nJust let me know what you need help with and I'll do my best to assist you." ]
+        "text": [ "l" ]
       }, {
         "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
       } ],
@@ -398,7 +398,7 @@
         }
       }, {
         "agentUtterance": {
-          "text": "Great! How can I assist you today?\n\nHere are some examples of things I can help you with:\n\n* Answer your questions on a wide range of topics\n* Translate text and speech between over 100 languages\n* Write different kinds of creative content, such as poems, songs, and stories\n* Provide summaries of articles, books, and other long pieces of text\n* Answer math problems at all levels, from basic arithmetic to calculus\n* Help with tasks, such as setting alarms, creating lists, and finding information on the web\n\nJust let me know what you need help with and I'll do my best to assist you.\n\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e"
+          "text": "l\n\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e"
         }
       } ]
     }
@@ -425,7 +425,7 @@
         "$flow.reset_counter": 0,
         "$flow.waiting_room_counter": 0,
         "$flow.wrong_country_code_counter": 0,
-        "$request.generative.response": "I am not sure what you mean by \"Next?\". Can you please clarify?",
+        "$request.generative.response": "l\nWhat is your date of birth? Please tell us the month, day, and year you were born.",
         "chatHistory": [ {
           "parts": [ "..?" ],
           "role": "user"
@@ -436,25 +436,25 @@
           "parts": [ "help?" ],
           "role": "user"
         }, {
-          "parts": [ "Sure, I can help you with a variety of tasks. Here are some examples:\n\n\n* **Answer your questions:** I can provide information on a wide range of topics, including science, history, geography, and current events.\n* **Translate languages:** I can translate text and speech between over 100 languages.\n* **Write different kinds of creative content:** I can write poems, songs, stories, and even code.\n* **Provide summaries:** I can summarize articles, books, and other long pieces of text.\n* **Answer math problems:** I can solve math problems at all levels, from basic arithmetic to calculus.\n* **Help with tasks:** I can help you with a variety of tasks, such as setting alarms, creating lists, and finding information on the web." ],
+          "parts": [ "h" ],
           "role": "model"
         }, {
           "parts": [ "what is the current page?" ],
           "role": "user"
         }, {
-          "parts": [ "The current page is a chat window where you are interacting with Gemini, a multi-modal AI model, developed by Google. I do not have access to the wider web and do not have the ability to determine what the current page is. \n\nMay I help you with something else?" ],
+          "parts": [ "e" ],
           "role": "model"
         }, {
           "parts": [ "hello?" ],
           "role": "user"
         }, {
-          "parts": [ "Hello there! How can I assist you today?\n\nI am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and help with a variety of tasks.\n\nPlease let me know if you have any questions or requests. I am here to help!" ],
+          "parts": [ "l" ],
           "role": "model"
         }, {
           "parts": [ "yes" ],
           "role": "user"
         }, {
-          "parts": [ "Great! How can I assist you today?\n\nHere are some examples of things I can help you with:\n\n* Answer your questions on a wide range of topics\n* Translate text and speech between over 100 languages\n* Write different kinds of creative content, such as poems, songs, and stories\n* Provide summaries of articles, books, and other long pieces of text\n* Answer math problems at all levels, from basic arithmetic to calculus\n* Help with tasks, such as setting alarms, creating lists, and finding information on the web\n\nJust let me know what you need help with and I'll do my best to assist you." ],
+          "parts": [ "l" ],
           "role": "model"
         } ]
       },
@@ -463,7 +463,7 @@
         "flow": "Telephone Number Collection"
       },
       "textResponses": [ {
-        "text": [ "I am not sure what you mean by \"Next?\". Can you please clarify?" ],
+        "text": [ "l\nWhat is your date of birth? Please tell us the month, day, and year you were born." ],
         "containAiGeneratedContent": true,
         "containGenerativeFallback": true
       }, {
@@ -478,7 +478,7 @@
         }
       }, {
         "agentUtterance": {
-          "text": "I am not sure what you mean by \"Next?\". Can you please clarify?\nWhat is your country name or code?"
+          "text": "l\nWhat is your date of birth? Please tell us the month, day, and year you were born.\nWhat is your country name or code?"
         }
       } ]
     }

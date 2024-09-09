@@ -1,7 +1,0 @@
-{
-  "entities": [ {
-    "value": "@sys.person:first-name",
-    "synonyms": [ "@sys.person:first-name" ],
-    "languageCode": "en"
-  } ]
-}

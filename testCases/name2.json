@@ -1,0 +1,345 @@
+{
+  "name": "7ac53499-9b36-4959-ad03-591e665b4208",
+  "displayName": "name2",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "..?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ ".." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "help?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "e?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "what is the current page?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hello?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "\u003e collect full name",
+        "flow": "Name Collection"
+      },
+      "textResponses": [ {
+        "text": [ "Hello! Welcome to E. Orum Young Law. How can I help?" ]
+      }, {
+        "text": [ "l" ]
+      }, {
+        "text": [ "What is your full name? Please tell us your first, last, and middle name, if you have one." ]
+      } ],
+      "currentFlow": {
+        "name": "Name Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Daniel Aaron Wycoff"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_name_collection_full_name"
+      },
+      "currentPage": {
+        "name": "\u003e confirm full name",
+        "flow": "Name Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Name Collection"
+      }
+    },
+    "expectations": {
+      "expectedSessionParameters": [ {
+        "key": "$flow.user_provided_full_name.name.name",
+        "value": "Daniel Aaron Wycoff"
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes"
+      },
+      "currentPage": {
+        "name": "\u003e confirm full name",
+        "flow": "Name Collection"
+      },
+      "textResponses": [ {
+        "text": [ "o" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Name Collection"
+      }
+    },
+    "expectations": {
+      "expectedSessionParameters": [ {
+        "key": "$flow.user_provided_full_name.name.name",
+        "value": "Daniel Aaron Wycoff"
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Next?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "\u003e collect country code",
+        "flow": "Telephone Number Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eWhat is your date of birth? Please tell us the month, day, and year you were born.\u003c/speak\u003e" ],
+        "containAiGeneratedContent": true,
+        "containGenerativeFallback": true
+      }, {
+        "text": [ "What is your country name or code?" ]
+      } ],
+      "currentFlow": {
+        "name": "Telephone Number Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "my date of birth is january 17th, 1995, and my country is the united states, making my country code a +1"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_telephone_number_collection_country_code_and_telephone_number"
+      },
+      "currentPage": {
+        "name": "\u003e collect telephone number",
+        "flow": "Telephone Number Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eSorry, but this telephone number cannot be recognized. We have collected country code as plus \u003csay-as interpret-as=\"verbatim\"\u003e1 \u003c/say-as\u003e. Please provide a valid telephone number.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Telephone Number Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "13184790512"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "\u003e confirm telephone number",
+        "flow": "Telephone Number Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eGot it, the number you mentioned is plus \u003csay-as interpret-as=\"telephone\" google:style=\"zero-as-zero\"\u003e 1 3184790512\u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Telephone Number Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes_1"
+      },
+      "currentPage": {
+        "name": "\u003e confirm full name",
+        "flow": "Name Collection"
+      },
+      "textResponses": [ {
+        "text": [ "Great, we are done collecting the telephone number." ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Name Collection"
+      }
+    },
+    "expectations": {
+      "expectedSessionParameters": [ {
+        "key": "$flow.user_provided_full_name.name.name",
+        "value": "Daniel Aaron Wycoff"
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes"
+      },
+      "currentPage": {
+        "name": "\u003e confirm full name",
+        "flow": "Name Collection"
+      },
+      "textResponses": [ {
+        "text": [ "v" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Name Collection"
+      }
+    },
+    "expectations": {
+      "expectedSessionParameters": [ {
+        "key": "$flow.user_provided_full_name.name.name",
+        "value": "Daniel Aaron Wycoff"
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "confirm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes"
+      },
+      "currentPage": {
+        "name": "\u003e confirm full name",
+        "flow": "Name Collection"
+      },
+      "textResponses": [ {
+        "text": [ "e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Daniel \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Aaron \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e Wycoff \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Name Collection"
+      }
+    },
+    "expectations": {
+      "expectedSessionParameters": [ {
+        "key": "$flow.user_provided_full_name.name.name",
+        "value": "Daniel Aaron Wycoff"
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1725887608,
+    "nanos": 273553000
+  },
+  "testConfig": {
+    "trackingParameters": [ "$flow.user_provided_full_name.name.name" ],
+    "flow": "Default Start Flow"
+  },
+  "languageCode": "en"
+}
