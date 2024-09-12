@@ -1,0 +1,62 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "I need a ",
+      "auto": true
+    }, {
+      "text": "meeting",
+      "parameterId": "appointment",
+      "auto": true
+    }, {
+      "text": " with an attorney.",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need to "
+    }, {
+      "text": "come into the office",
+      "parameterId": "appointment"
+    }, {
+      "text": " and see you guys."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need to book an "
+    }, {
+      "text": "appointment",
+      "parameterId": "appointment"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need to "
+    }, {
+      "text": "schedule an",
+      "parameterId": "appointment"
+    }, {
+      "text": "appointment",
+      "parameterId": "appointment"
+    }, {
+      "text": " for my case."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need to "
+    }, {
+      "text": "speak with an attorney.",
+      "parameterId": "appointment"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,6 +1,10 @@
 {
   "name": "c7bd5d7d-22a7-48b6-883e-bf477d212f21",
   "displayName": "NBK",
+  "parameters": [ {
+    "id": "bankruptcy",
+    "entityType": "@callerOBJ"
+  } ],
   "priority": 500000,
   "numTrainingPhrases": 4
 }

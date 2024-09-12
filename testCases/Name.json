@@ -378,7 +378,7 @@
         } ]
       },
       "triggeredIntent": {
-        "name": "prebuilt_components_confirmation_yes"
+        "name": "green_light"
       },
       "currentPage": {
         "name": "\u003e confirm full name",
@@ -459,7 +459,7 @@
         } ]
       },
       "currentPage": {
-        "name": "\u003e collect country code",
+        "name": "a86e9da8-a675-4a3a-afde-224485c3ac7c",
         "flow": "Telephone Number Collection"
       },
       "textResponses": [ {

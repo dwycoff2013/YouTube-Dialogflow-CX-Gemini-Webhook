@@ -20,14 +20,24 @@
     } ]
   },
   "transitionRoutes": [ {
-    "intent": "prebuilt_components_confirmation_yes",
+    "intent": "green_light",
     "triggerFulfillment": {
-    
+      "messages": [ {
+        "text": {
+          "text": [ "Can you confirm you full name for me?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "\u003e collect if middle name exists",
+    "targetPage": "\u003e confirm full name",
     "name": "257d4638-408c-406e-9ebb-aa03725f8dc4"
   }, {
-    "intent": "prebuilt_components_confirmation_no",
+    "intent": "error_light",
     "condition": "$flow.incorrect_last_name_counter = 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -35,10 +45,9 @@
         "value": "Sorry, we've tried too many times and failed to collect your response."
       } ]
     },
-    "targetPage": "end failure",
     "name": "0672dd21-c861-4d6c-b4c3-6818bbdd23c1"
   }, {
-    "intent": "prebuilt_components_confirmation_no",
+    "intent": "error_light",
     "condition": "$flow.incorrect_last_name_counter \u003c 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -49,10 +58,9 @@
         "value": "$sys.func.ADD($flow.incorrect_last_name_counter,1)"
       } ]
     },
-    "targetPage": "\u003e collect spelling last name",
     "name": "2b40292e-cf59-49af-82af-7bc1ecfb9c1e"
   }, {
-    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "intent": "red_light",
     "condition": "$flow.incorrect_last_name_counter \u003c 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -63,10 +71,9 @@
         "value": "$sys.func.ADD($flow.incorrect_last_name_counter,1)"
       } ]
     },
-    "targetPage": "\u003e collect spelling last name",
     "name": "2a92dd8e-004f-4dda-bd3a-e711bd35092b"
   }, {
-    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "intent": "red_light",
     "condition": "$flow.incorrect_last_name_counter = 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -74,46 +81,7 @@
         "value": "Sorry, I've used too many tries and failed to collect your response."
       } ]
     },
-    "targetPage": "end failure",
     "name": "32116e98-c09d-41f3-a1a9-5aecf344cb5c"
-  }, {
-    "intent": "prebuilt_components_escalate_human_agent",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "transfer_reason",
-        "value": "agent"
-      } ]
-    },
-    "targetPage": "end escalation",
-    "name": "f2923fad-fb35-4ba3-a9fa-cef82046a115"
-  }, {
-    "condition": "$session.params.from_waiting_room_reusable_flow = true",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "$flow.last_prompt" ]
-        },
-        "languageCode": "en"
-      } ],
-      "setParameterActions": [ {
-        "parameter": "from_waiting_room_reusable_flow",
-        "value": null
-      }, {
-        "parameter": "$flow.last_prompt",
-        "value": "\u003cspeak\u003e$flow.user_provided_last_name_ssml. Did we spell your last name correctly?\u003c/speak\u003e"
-      } ]
-    },
-    "name": "1939a1ce-7cac-4324-94d1-97553b0dcc0c"
-  }, {
-    "condition": "$session.params.waiting_room_event_handler = true",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "waiting_room_event_handler",
-        "value": null
-      } ]
-    },
-    "targetPage": "end failure",
-    "name": "b1c8acbd-2906-4243-bae1-b68774373828"
   } ],
   "eventHandlers": [ {
     "event": "sys.no-match-1",
@@ -160,7 +128,6 @@
     },
     "name": "f92192ac-0545-4c8e-9675-15bbbe31f634"
   }, {
-    "targetPage": "end failure",
     "event": "sys.no-match-3",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -170,7 +137,6 @@
     },
     "name": "2226aac0-f455-47d6-abe0-b885900f16dd"
   }, {
-    "targetPage": "end failure",
     "event": "sys.no-input-3",
     "triggerFulfillment": {
       "setParameterActions": [ {

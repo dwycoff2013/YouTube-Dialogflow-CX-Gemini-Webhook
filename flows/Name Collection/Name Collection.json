@@ -3,25 +3,6 @@
   "displayName": "Name Collection",
   "description": "This flow collects a first, last, and middle name (if applicable).",
   "transitionRoutes": [ {
-    "intent": "prebuilt_components_waiting_room",
-    "condition": "$flow.waiting_room_counter \u003c 2",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.waiting_room_counter",
-        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
-      } ]
-    },
-    "targetFlow": "Waiting Room",
-    "name": "778c5d34-239f-407a-b0e0-70e3ab9a63f3"
-  }, {
-    "intent": "prebuilt_components_waiting_room",
-    "condition": "$flow.waiting_room_counter = 2",
-    "triggerFulfillment": {
-    
-    },
-    "targetPage": "end failure",
-    "name": "75f5804c-bec2-4384-9c2e-0098e4df2955"
-  }, {
     "intent": "prebuilt_components_name_collection_full_name",
     "triggerFulfillment": {
       "webhook": "Gemini",
@@ -30,11 +11,13 @@
       
       }
     },
-    "targetPage": "\u003e confirm full name",
+    "targetPage": "\u003e collect full name",
     "name": "88fb2fe7-9724-4315-863c-15f2f51fecfe"
   }, {
     "condition": "true",
     "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "$flow.is_select_initial_path",
         "value": true
@@ -98,7 +81,10 @@
       }, {
         "parameter": "$flow.first_name_part_spell_out_counter",
         "value": 0
-      } ]
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
     "targetPage": "\u003e collect full name",
     "name": "6a5a6470-3923-41e2-885f-4cd87ba616fd"
@@ -107,9 +93,21 @@
     "targetPage": "\u003e collect full name",
     "event": "sys.no-match-default",
     "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "enableGenerativeFallback": true,
+      "nextActionOverride": {
+      
+      }
+    },
+    "name": "bd03666f-e364-47f0-9c21-344f13bd4427"
+  }, {
+    "targetPage": "initial start page",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
       "messages": [ {
         "text": {
-          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, We didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
         },
         "languageCode": "en"
       } ],
@@ -118,17 +116,6 @@
       "nextActionOverride": {
       
       }
-    },
-    "name": "bd03666f-e364-47f0-9c21-344f13bd4427"
-  }, {
-    "event": "sys.no-input-default",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, We didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
-        },
-        "languageCode": "en"
-      } ]
     },
     "name": "55bd6070-cfb4-451d-953b-ca4cff2c6765"
   } ],

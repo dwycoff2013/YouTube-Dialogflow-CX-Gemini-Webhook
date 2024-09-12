@@ -20,102 +20,67 @@
     } ]
   },
   "transitionRoutes": [ {
-    "intent": "prebuilt_components_confirmation_yes",
+    "intent": "green_light",
     "triggerFulfillment": {
     
     },
-    "targetPage": "\u003e collect last name",
+    "targetPage": "\u003e collect middle name",
     "name": "faf88bcd-fc13-4b6d-8b3d-f6f3720b99c7"
   }, {
-    "intent": "prebuilt_components_confirmation_no",
+    "intent": "error_light",
     "condition": "$flow.incorrect_first_name_counter = 1",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.failure_msg",
-        "value": "Sorry, we've tried too many times and failed to collect your response."
-      } ]
-    },
-    "targetPage": "end failure",
-    "name": "c7562eb3-d2c2-49d1-8692-4bba41b4632a"
-  }, {
-    "intent": "prebuilt_components_confirmation_no",
-    "condition": "$flow.incorrect_first_name_counter \u003c 1",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.user_provided_first_name",
-        "value": null
-      }, {
-        "parameter": "$flow.incorrect_first_name_counter",
-        "value": "$sys.func.ADD($flow.incorrect_first_name_counter,1)"
-      } ]
-    },
-    "targetPage": "\u003e collect spelling first name",
-    "name": "77ca23ac-b47f-4ae4-96f6-ba311676dfb2"
-  }, {
-    "intent": "prebuilt_components_name_collection_confirmation_no",
-    "condition": "$flow.incorrect_first_name_counter \u003c 1",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.user_provided_first_name",
-        "value": null
-      }, {
-        "parameter": "$flow.incorrect_first_name_counter",
-        "value": "$sys.func.ADD($flow.incorrect_first_name_counter,1)"
-      } ]
-    },
-    "targetPage": "\u003e collect spelling first name",
-    "name": "91168027-fa77-4568-9cce-7fea9f02e59e"
-  }, {
-    "intent": "prebuilt_components_name_collection_confirmation_no",
-    "condition": "$flow.incorrect_first_name_counter = 1",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.failure_msg",
-        "value": "Sorry, we've tried too many times and failed to collect your response."
-      } ]
-    },
-    "targetPage": "end failure",
-    "name": "c088edc8-9a7b-4b30-a535-846b3ab9ca40"
-  }, {
-    "intent": "prebuilt_components_escalate_human_agent",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "transfer_reason",
-        "value": "agent"
-      } ]
-    },
-    "targetPage": "end escalation",
-    "name": "b679fc2d-3a8b-483f-a739-24f0fac25135"
-  }, {
-    "condition": "$session.params.from_waiting_room_reusable_flow = true",
     "triggerFulfillment": {
       "messages": [ {
         "text": {
-          "text": [ "$flow.last_prompt" ]
+          "text": [ "We'll just move on to your phone number." ]
         },
         "languageCode": "en"
       } ],
-      "setParameterActions": [ {
-        "parameter": "from_waiting_room_reusable_flow",
-        "value": null
-      }, {
-        "parameter": "$flow.last_prompt",
-        "value": "\u003cspeak\u003e$flow.user_provided_first_name_ssml. Did we spell your first name correctly?\u003c/speak\u003e"
-      } ]
+      "nextActionOverride": {
+      
+      }
     },
-    "name": "f51c97e7-d51b-4d92-937f-c05e82bb44a2"
+    "targetFlow": "Telephone Number Collection",
+    "name": "c7562eb3-d2c2-49d1-8692-4bba41b4632a"
   }, {
-    "condition": "$session.params.waiting_room_event_handler = true",
+    "intent": "error_light",
+    "condition": "$flow.incorrect_first_name_counter \u003c 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
-        "parameter": "waiting_room_event_handler",
+        "parameter": "$flow.user_provided_first_name",
         "value": null
+      }, {
+        "parameter": "$flow.incorrect_first_name_counter",
+        "value": "$sys.func.ADD($flow.incorrect_first_name_counter,1)"
       } ]
     },
-    "targetPage": "end failure",
-    "name": "5ec3b629-ba36-4f45-9b46-35f11e48e0b4"
+    "name": "77ca23ac-b47f-4ae4-96f6-ba311676dfb2"
+  }, {
+    "intent": "red_light",
+    "condition": "$flow.incorrect_first_name_counter \u003c 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_first_name",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_first_name_counter",
+        "value": "$sys.func.ADD($flow.incorrect_first_name_counter,1)"
+      } ]
+    },
+    "name": "91168027-fa77-4568-9cce-7fea9f02e59e"
+  }, {
+    "intent": "red_light",
+    "condition": "$flow.incorrect_first_name_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've tried too many times and failed to collect your response."
+      } ]
+    },
+    "name": "c088edc8-9a7b-4b30-a535-846b3ab9ca40"
   } ],
   "eventHandlers": [ {
+    "targetFlow": "Name Collection",
     "event": "sys.no-match-1",
     "triggerFulfillment": {
       "messages": [ {
@@ -123,7 +88,11 @@
           "text": [ "\u003cspeak\u003eSorry, we didn't get that. $flow.user_provided_first_name_ssml. Did we spell your first name correctly?\u003c/speak\u003e" ]
         },
         "languageCode": "en"
-      } ]
+      } ],
+      "enableGenerativeFallback": true,
+      "nextActionOverride": {
+      
+      }
     },
     "name": "fb43d58e-9613-4644-b658-93a648a26e51"
   }, {
@@ -160,7 +129,6 @@
     },
     "name": "4aaae3e1-6125-478b-890e-0c9bcc046bb5"
   }, {
-    "targetPage": "end failure",
     "event": "sys.no-match-3",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -170,7 +138,6 @@
     },
     "name": "6a707516-e898-4fba-ac26-aa01fd30ae42"
   }, {
-    "targetPage": "end failure",
     "event": "sys.no-input-3",
     "triggerFulfillment": {
       "setParameterActions": [ {

@@ -20,13 +20,14 @@
     } ]
   },
   "transitionRoutes": [ {
-    "intent": "prebuilt_components_confirmation_yes",
+    "intent": "green_light",
     "triggerFulfillment": {
     
     },
+    "targetPage": "\u003e collect last name",
     "name": "fecea42c-3e81-4413-a283-2a072a30beab"
   }, {
-    "intent": "prebuilt_components_confirmation_no",
+    "intent": "error_light",
     "condition": "$flow.incorrect_middle_name_counter = 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -34,10 +35,9 @@
         "value": "Sorry, we've tried too many times and failed to collect your response."
       } ]
     },
-    "targetPage": "end failure",
     "name": "ca68fda3-29c4-4360-9f6e-04019bedefa8"
   }, {
-    "intent": "prebuilt_components_confirmation_no",
+    "intent": "error_light",
     "condition": "$flow.incorrect_middle_name_counter \u003c 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -48,10 +48,9 @@
         "value": null
       } ]
     },
-    "targetPage": "\u003e collect spelling middle name",
     "name": "748e94dd-a738-4c66-84d5-1c265f34322c"
   }, {
-    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "intent": "red_light",
     "condition": "$flow.incorrect_middle_name_counter \u003c 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -62,10 +61,9 @@
         "value": "$sys.func.ADD($flow.incorrect_middle_name_counter,1)"
       } ]
     },
-    "targetPage": "\u003e collect spelling middle name",
     "name": "532b2715-af35-48d5-a989-91d11185cba9"
   }, {
-    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "intent": "red_light",
     "condition": "$flow.incorrect_middle_name_counter = 1",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -73,46 +71,7 @@
         "value": "Sorry, we've tried too many times and failed to collect your response."
       } ]
     },
-    "targetPage": "end failure",
     "name": "d0420066-9163-4123-b34a-8bca823decd2"
-  }, {
-    "intent": "prebuilt_components_escalate_human_agent",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "transfer_reason",
-        "value": "agent"
-      } ]
-    },
-    "targetPage": "end escalation",
-    "name": "4dc449c9-ca97-45af-be55-f1b685170fa2"
-  }, {
-    "condition": "$session.params.from_waiting_room_reusable_flow = true",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "$flow.last_prompt" ]
-        },
-        "languageCode": "en"
-      } ],
-      "setParameterActions": [ {
-        "parameter": "from_waiting_room_reusable_flow",
-        "value": null
-      }, {
-        "parameter": "$flow.last_prompt",
-        "value": "\u003cspeak\u003e$flow.user_provided_middle_name_ssml. Did we spell your middle name correctly?\u003c/speak\u003e"
-      } ]
-    },
-    "name": "1c4bcf3e-a323-435c-b8b5-51f71ee6226f"
-  }, {
-    "condition": "$session.params.waiting_room_event_handler = true",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "waiting_room_event_handler",
-        "value": null
-      } ]
-    },
-    "targetPage": "end failure",
-    "name": "ae545e76-d3a4-4039-8fe1-02158f81d60e"
   } ],
   "eventHandlers": [ {
     "event": "sys.no-match-1",
@@ -159,7 +118,6 @@
     },
     "name": "ca636e86-4dc3-40ff-bbe9-977cc2ba2753"
   }, {
-    "targetPage": "end failure",
     "event": "sys.no-match-3",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -169,7 +127,6 @@
     },
     "name": "a0b0e231-7608-43fb-aa7d-e35350a8b132"
   }, {
-    "targetPage": "end failure",
     "event": "sys.no-input-3",
     "triggerFulfillment": {
       "setParameterActions": [ {

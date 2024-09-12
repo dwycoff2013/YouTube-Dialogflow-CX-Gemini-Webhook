@@ -11,7 +11,7 @@
         "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
       } ]
     },
-    "targetFlow": "Waiting Room",
+    "targetPage": "\u003e collect telephone number",
     "name": "ad7d43bd-f85b-4f40-a397-87a79f2e63b1"
   }, {
     "intent": "prebuilt_components_waiting_room_1",
@@ -19,7 +19,7 @@
     "triggerFulfillment": {
     
     },
-    "targetPage": "end failure",
+    "targetPage": "\u003e collect telephone number",
     "name": "82a06525-cf0a-487c-b06b-dd2efc21fff8"
   }, {
     "intent": "prebuilt_components_replay",
@@ -41,24 +41,35 @@
         "value": "$sys.func.ADD($flow.replay_counter,1)"
       } ]
     },
+    "targetPage": "\u003e collect telephone number",
     "name": "1fb393ac-05d3-4e47-943a-8ea1e39130bf"
   }, {
     "intent": "prebuilt_components_replay",
     "condition": "$flow.replay_counter = 2",
     "triggerFulfillment": {
-    
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "end failure",
+    "targetPage": "\u003e collect telephone number",
     "name": "ce2e034a-1797-40f8-bc5d-f4dffb246e62"
+  }, {
+    "intent": "green_light",
+    "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
+    },
+    "name": "9af23e3d-556b-4936-96e2-b62e6d7e65d6"
   }, {
     "condition": "true",
     "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "What is your country name or code?" ]
-        },
-        "languageCode": "en"
-      } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "$flow.invalid_cc_counter",
         "value": 0
@@ -81,9 +92,6 @@
         "parameter": "$flow.phone_number",
         "value": null
       }, {
-        "parameter": "$flow.last_prompt",
-        "value": "What is your country name or code?"
-      }, {
         "parameter": "$flow.replay_counter",
         "value": 0
       }, {
@@ -92,24 +100,18 @@
       }, {
         "parameter": "$flow.playback_counter",
         "value": 0
-      }, {
-        "parameter": "$flow.failure_message",
-        "value": "Sorry, we are having difficulty understanding your response."
-      } ]
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "\u003e collect country code",
+    "targetPage": "\u003e collect telephone number",
     "name": "c29b4034-2c04-465e-8a8e-968c128ae9d2"
   } ],
   "eventHandlers": [ {
-    "targetPage": "\u003e collect country code",
+    "targetPage": "\u003e collect telephone number",
     "event": "sys.no-match-default",
     "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "We didn't get that. Can you say it again?", "we missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
-        },
-        "languageCode": "en"
-      } ],
       "webhook": "Gemini",
       "tag": "askGemini",
       "enableGenerativeFallback": true,
@@ -119,6 +121,7 @@
     },
     "name": "da197ff5-f0fc-40a0-bb45-1a8cae15b34c"
   }, {
+    "targetPage": "\u003e collect telephone number",
     "event": "sys.no-input-default",
     "triggerFulfillment": {
       "messages": [ {
@@ -126,7 +129,12 @@
           "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
         },
         "languageCode": "en"
-      } ]
+      } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
     },
     "name": "e31fae38-82fa-4179-b7ed-e6b590023f86"
   } ],

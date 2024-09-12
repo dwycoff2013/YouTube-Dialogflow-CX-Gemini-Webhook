@@ -16,7 +16,6 @@
           } ]
         },
         "repromptEventHandlers": [ {
-          "targetPage": "\u003e collect alternate last name",
           "event": "sys.no-match-1",
           "triggerFulfillment": {
             "messages": [ {
@@ -32,7 +31,6 @@
           },
           "name": "bc2e994f-65c0-4118-8f93-45c6477a8eff"
         }, {
-          "targetPage": "\u003e collect spelling last name",
           "event": "sys.no-match-2",
           "triggerFulfillment": {
           
@@ -61,7 +59,6 @@
           },
           "name": "4fd05a06-3980-41cf-a6fd-88a7812bc2af"
         }, {
-          "targetPage": "end failure",
           "event": "sys.no-input-3",
           "triggerFulfillment": {
             "setParameterActions": [ {
@@ -88,7 +85,6 @@
         "value": "agent"
       } ]
     },
-    "targetPage": "end escalation",
     "name": "3a494c50-bf0c-4954-98e8-30965a58b0fa"
   }, {
     "condition": "$page.params.status = FINAL",
@@ -126,7 +122,6 @@
         "value": null
       } ]
     },
-    "targetPage": "special character initial",
     "name": "32f6a038-da84-4e3b-863f-1560bb1f2503"
   }, {
     "condition": "$session.params.from_waiting_room_reusable_flow = true",
@@ -145,7 +140,6 @@
         "value": null
       } ]
     },
-    "targetPage": "end failure",
     "name": "d312d122-867f-4538-9fe5-7d26c54faa21"
   } ]
 }

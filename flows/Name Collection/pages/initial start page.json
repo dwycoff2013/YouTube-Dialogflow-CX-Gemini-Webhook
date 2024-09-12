@@ -16,12 +16,17 @@
         },
         "languageCode": "en"
       } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "$flow.last_prompt",
         "value": "Before capturing your name, could you please help us confirm whether you have any hyphens, extra spaces, or apostrophes in your name?"
-      } ]
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "\u003e confirm special character",
+    "targetPage": "\u003e collect first name",
     "name": "669d8215-e42e-4141-92d5-83edf52a3253"
   }, {
     "condition": "$flow.collect_first_name = \"first name\"",
@@ -31,17 +36,22 @@
         "value": "$flow.verify_person_name"
       } ]
     },
-    "targetPage": "\u003e collect last name",
+    "targetPage": "\u003e collect middle name",
     "name": "1e099f2c-c688-4ec2-b77e-a4925d7dca62"
   }, {
     "condition": "$flow.collect_last_name = \"last name\"",
     "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "$flow.user_provided_last_name",
         "value": "$flow.verify_person_name"
-      } ]
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "\u003e collect if middle name exists",
+    "targetPage": "\u003e confirm full name",
     "name": "5a9d4f9b-2bb1-4c22-9709-a1370110f5c2"
   }, {
     "condition": "$flow.collect_middle_name = \"middle name\"",

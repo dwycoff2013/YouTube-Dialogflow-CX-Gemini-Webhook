@@ -139,7 +139,7 @@
     },
     "virtualAgentOutput": {
       "triggeredIntent": {
-        "name": "prebuilt_components_confirmation_yes"
+        "name": "green_light"
       },
       "currentPage": {
         "name": "\u003e confirm full name",
@@ -172,7 +172,7 @@
     },
     "virtualAgentOutput": {
       "currentPage": {
-        "name": "\u003e collect country code",
+        "name": "a86e9da8-a675-4a3a-afde-224485c3ac7c",
         "flow": "Telephone Number Collection"
       },
       "textResponses": [ {
@@ -198,7 +198,7 @@
     },
     "virtualAgentOutput": {
       "triggeredIntent": {
-        "name": "prebuilt_components_telephone_number_collection_country_code_and_telephone_number"
+        "name": "a29da341-a41e-4ca4-93ba-41455ae7a928"
       },
       "currentPage": {
         "name": "\u003e collect telephone number",
@@ -278,7 +278,7 @@
     },
     "virtualAgentOutput": {
       "triggeredIntent": {
-        "name": "prebuilt_components_confirmation_yes"
+        "name": "green_light"
       },
       "currentPage": {
         "name": "\u003e confirm full name",
@@ -311,7 +311,7 @@
     },
     "virtualAgentOutput": {
       "triggeredIntent": {
-        "name": "prebuilt_components_confirmation_yes"
+        "name": "green_light"
       },
       "currentPage": {
         "name": "\u003e confirm full name",

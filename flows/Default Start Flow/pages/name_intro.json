@@ -1,0 +1,32 @@
+{
+  "name": "58255e39-d8dd-43ee-8cac-39da5164928d",
+  "displayName": "name_intro",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_full_name",
+    "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
+    },
+    "targetPage": "Current Page",
+    "name": "cfb497aa-5596-4ee8-937b-bc3f59c47e92"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "Current Page",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "enableGenerativeFallback": true,
+      "nextActionOverride": {
+      
+      }
+    },
+    "name": "9b2f2d20-9c19-4fff-9561-f592710be357"
+  } ]
+}

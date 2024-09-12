@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "bankruptcy",
+    "synonyms": [ "bankruptcy", "debt", "help", "in debt" ],
+    "languageCode": "en"
+  }, {
+    "value": "appointment",
+    "synonyms": [ "appointment", "conference", "meeting" ],
+    "languageCode": "en"
+  } ]
+}

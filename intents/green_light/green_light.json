@@ -1,0 +1,13 @@
+{
+  "name": "2615da02-bd8f-4fad-afc3-832ac7ccd7a5",
+  "displayName": "green_light",
+  "priority": 500000,
+  "labels": [ {
+    "key": "confirmation",
+    "value": "confirmation"
+  }, {
+    "key": "yes",
+    "value": "yes"
+  } ],
+  "numTrainingPhrases": 89
+}

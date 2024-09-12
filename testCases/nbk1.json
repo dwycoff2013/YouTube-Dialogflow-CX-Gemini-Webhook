@@ -1,0 +1,179 @@
+{
+  "name": "07af94df-3dbf-48db-bffd-78a0fe382484",
+  "displayName": "nbk1",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "My name is Daniel Aaron Wycoff"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "**Welcome, Daniel Aaron Wycoff!**\n\nIt's a pleasure to have you here. Let me help you get started with this platform:\n\n**Getting Around:**\n\n* Use the **left sidebar** to navigate between different sections of the platform.\n* Click on **Help** for additional support and resources.\n\n**Customizing Your Profile:**\n\n* Go to your **Profile** page to:\n    * Upload a profile picture\n    * Write a short bio\n    * Connect your social media accounts\n\n**Joining Communities:**\n\n* Explore the **Communities** section to find groups of people interested in similar topics.\n* Join communities that align with your interests and start engaging in discussions.\n\n**Sharing Content:**\n\n* Click on the **Create Post** button to share your thoughts, experiences, or questions.\n* Add relevant **tags** to make your posts discoverable.\n* Use the **formatting options** to customize the appearance of your posts.\n\n**Interacting with Others:**\n\n* **Comment** on other people's posts to engage in conversations.\n* **React** to posts using emojis to express your thoughts and feelings.\n* **Message** other users directly to establish connections.\n\n**Additional Features:**\n\n* **Polls:** Create polls to gather opinions and insights.\n* **Events:** Organize or join events within specific communities.\n* **Files:** Upload and share files with other users.\n\n**Stay Connected:**\n\n* **Follow** other users to stay updated on their posts.\n* **Receive** notifications when someone engages with your content.\n* **Subscribe** to email newsletters for regular updates.\n\nFeel free to explore the platform and connect with us if you have any questions or need assistance. We're here to help you make the most of your experience!" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "What platform?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You are currently using **Discourse**, a popular open-source discussion platform. It is widely used for online communities, forums, and knowledge bases.\n\nDiscourse is known for its:\n\n* **User-friendly interface:** Easy to navigate and participate in discussions.\n* **Powerful moderation tools:** Helps keep communities safe and organized.\n* **Customization options:** Allows communities to tailor the platform to their specific needs.\n* **Integration with other services:** Supports integration with popular social media platforms and external tools.\n\nDiscourse is used by a wide range of organizations, including:\n\n* Reddit\n* Stack Overflow\n* MetaFilter\n* Hacker News\n* The New York Times\n\nWhether you are looking to connect with like-minded people, participate in discussions, or share your knowledge, Discourse provides a robust and engaging platform for online communication." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "How did we get on discourse?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You accessed Discourse through a link or invitation that directed you to this specific platform. Discourse is commonly used for online communities, forums, and knowledge bases.\n\nOnce you clicked on the link or accepted the invitation, you were taken to the Discourse platform where you can participate in discussions, share content, and interact with other users.\n\nIs there anything else I can assist you with today?" ],
+        "containAiGeneratedContent": true,
+        "containGenerativeFallback": true
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Where are we?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You are currently on a **Discourse** platform, which is a popular open-source discussion platform. It is widely used for online communities, forums, and knowledge bases.\n\nDiscourse is known for its user-friendly interface, powerful moderation tools, customization options, and integration with other services.\n\nThis specific Discourse platform is likely hosted by a particular organization or community. To determine the exact location or context of this platform, you may want to check the website's URL, branding, or any other available information.\n\nIs there anything else I can assist you with today?" ],
+        "containAiGeneratedContent": true,
+        "containGenerativeFallback": true
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "I need to file bankruptcy"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "**Filing for Bankruptcy**\n\nBankruptcy is a legal process that allows individuals or businesses to discharge or reorganize their debts. It can be a complex and challenging process, but it can also provide a fresh start for those who are struggling with overwhelming debt.\n\n**Steps to File for Bankruptcy:**\n\n1. **Consult with an Attorney:** It is highly recommended to consult with an experienced bankruptcy attorney to guide you through the process and ensure that you understand your options.\n2. **Gather Financial Documents:** You will need to gather various financial documents, including income statements, asset lists, and debt schedules.\n3. **File a Petition:** The bankruptcy petition is a legal document that initiates the bankruptcy process. It must be filed with the bankruptcy court in your district.\n4. **Attend a Meeting of Creditors:** After filing the petition, you will be required to attend a meeting of creditors, where they can question you about your financial situation.\n5. **Receive a Discharge (Chapter 7) or Repayment Plan (Chapter 13):** Depending on the type of bankruptcy you file, you may receive a discharge of your debts (Chapter 7) or enter into a repayment plan (Chapter 13).\n\n**Types of Bankruptcy:**\n\n* **Chapter 7:** This is a liquidation bankruptcy, where your non-exempt assets are sold to pay off your creditors.\n* **Chapter 13:** This is a reorganization bankruptcy, where you create a repayment plan to pay off your debts over a period of time.\n\n**Eligibility for Bankruptcy:**\n\nNot everyone is eligible to file for bankruptcy. There are income limits and other criteria that must be met. An attorney can help you determine if you qualify.\n\n**Consequences of Bankruptcy:**\n\nFiling for bankruptcy can have a negative impact on your credit score and may make it difficult to obtain credit in the future. It is important to weigh the potential consequences carefully before making a decision.\n\n**Additional Resources:**\n\n* [United States Bankruptcy Court](https://www.uscourts.gov/services-forms/bankruptcy)\n* [National Association of Consumer Bankruptcy Attorneys](https://www.nacba.org/)\n* [American Bankruptcy Institute](https://www.abi.org/)\n\nPlease note that this information is for general guidance only and should not be taken as legal advice. It is essential to consult with an experienced bankruptcy attorney to discuss your specific situation and options." ],
+        "containAiGeneratedContent": true,
+        "containGenerativeFallback": true
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "name_intro",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hello! Welcome to E. Orum Young Law. How can I help?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "I need to file Bankruptcy."
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "name_intro",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I'm sorry to hear that you're in need of bankruptcy assistance. I can provide you with some information and resources to help you get started. First, you'll need to determine which type of bankruptcy is right for you. There are two main types of bankruptcy for individuals: Chapter 7 and Chapter 13. Chapter 7 is a liquidation bankruptcy, which means that your nonexempt property will be sold to pay off your debts. Chapter 13 is a reorganization bankruptcy, which allows you to create a plan to repay your debts over a period of time. Once you've determined which type of bankruptcy is right for you, you'll need to file a petition with the bankruptcy court. The petition will include information about your income, assets, and debts. You'll also need to file a plan if you're filing for Chapter 13 bankruptcy. After you've filed your petition, the court will hold a meeting of creditors. At this meeting, your creditors will have an opportunity to question you about your bankruptcy filing. The court will then decide whether to grant your discharge. If your discharge is granted, you'll be released from your debts. However, there are some debts that cannot be discharged in bankruptcy, such as student loans and child support. If you're considering filing for bankruptcy, it's important to speak with an attorney to discuss your options. An attorney can help you determine which type of bankruptcy is right for you and can help you prepare your petition." ],
+        "containAiGeneratedContent": true,
+        "containGenerativeFallback": true
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1726003791,
+    "nanos": 660776000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

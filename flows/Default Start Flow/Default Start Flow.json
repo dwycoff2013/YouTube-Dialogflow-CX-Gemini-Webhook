@@ -7,10 +7,19 @@
     "triggerFulfillment": {
       "messages": [ {
         "text": {
-          "text": [ "Hello! Welcome to E. Orum Young Law. How can I help?", "Hi! How can I help you today?" ]
+          "text": [ "Hello! Welcome to E. Orum Young Law. How can I help?" ]
         },
         "languageCode": "en"
       } ],
+      "nextActionOverride": {
+      
+      }
+    },
+    "targetPage": "name_intro",
+    "name": "4d0ddea1-38e3-423d-8a20-1c0b33481318"
+  }, {
+    "intent": "NBK",
+    "triggerFulfillment": {
       "webhook": "Gemini",
       "tag": "askGemini",
       "nextActionOverride": {
@@ -18,13 +27,26 @@
       }
     },
     "targetFlow": "Name Collection",
-    "name": "4d0ddea1-38e3-423d-8a20-1c0b33481318"
+    "name": "99ff8b3f-f904-443f-9742-541f74bbd5b0"
+  }, {
+    "intent": "appointment",
+    "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
+    },
+    "targetFlow": "Name Collection",
+    "name": "9c6a88cb-4e10-4877-9f66-73d1ec8ad91b"
   } ],
   "eventHandlers": [ {
+    "targetPage": "Current Page",
     "event": "sys.no-match-default",
     "triggerFulfillment": {
       "webhook": "Gemini",
       "tag": "askGemini",
+      "enableGenerativeFallback": true,
       "nextActionOverride": {
       
       }

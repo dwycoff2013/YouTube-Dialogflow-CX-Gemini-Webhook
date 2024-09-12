@@ -14,39 +14,67 @@
     } ]
   },
   "transitionRoutes": [ {
-    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "intent": "green_light",
+    "condition": "$flow.user_provided_full_name.first-name != null OR $flow.user_provided_full_name.last-name != null",
     "triggerFulfillment": {
       "messages": [ {
         "text": {
-          "text": [ "Sorry, we didn't get that right. Let's start capturing the name again." ]
+          "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_first_name\u003c/say-as\u003e\u003c/prosody\u003e, and your last name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_last_name \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
         },
         "languageCode": "en"
-      } ]
+      } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "setParameterActions": [ {
+        "parameter": "$flow.format_first_name",
+        "value": "$flow.user_provided_full_name.first-name"
+      }, {
+        "parameter": "$flow.format_last_name",
+        "value": "$flow.user_provided_full_name.last-name"
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "initial start page",
-    "name": "c081a7e8-a177-4675-b225-cc55c264db2e"
+    "targetFlow": "Telephone Number Collection",
+    "name": "eb585b47-202d-4693-a5b2-a3b407c674ce"
   }, {
-    "intent": "prebuilt_components_confirmation_no",
+    "intent": "green_light",
+    "condition": "$flow.format_first_name != null AND $flow.format_last_name != null",
     "triggerFulfillment": {
       "messages": [ {
         "text": {
-          "text": [ "Sorry, we didn't get that right. Let's start capturing the name again." ]
+          "text": [ "Great! We'll move on." ]
         },
         "languageCode": "en"
-      } ]
+      } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_first_name",
+        "value": "$flow.format_first_name"
+      }, {
+        "parameter": "$flow.user_provided_last_name",
+        "value": "$flow.format_last_name"
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "initial start page",
-    "name": "8916460b-c508-42c0-8536-73d62c9daa1a"
+    "targetFlow": "Telephone Number Collection",
+    "name": "58284f52-ecd4-4b74-b8c8-cceedb74662f"
   }, {
-    "intent": "prebuilt_components_confirmation_yes",
+    "intent": "green_light",
     "condition": "$flow.user_provided_full_name.first-name != NULL AND $flow.user_provided_full_name.last-name != NULL AND $flow.user_provided_full_name.middle-name != NULL",
     "triggerFulfillment": {
       "messages": [ {
         "text": {
-          "text": [ "Great! We can move on to your phone number." ]
+          "text": [ "Great! We'll move on." ]
         },
         "languageCode": "en"
       } ],
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "$flow.user_provided_first_name",
         "value": "$flow.format_first_name"
@@ -64,205 +92,39 @@
     "targetFlow": "Telephone Number Collection",
     "name": "16990e87-5210-45ed-8aff-e4fa016593d0"
   }, {
-    "intent": "prebuilt_components_confirmation_yes",
-    "condition": "$flow.count \u003e= 3 OR $flow.user_provided_full_name.middle-name != NULL",
+    "intent": "red_light",
     "triggerFulfillment": {
       "messages": [ {
         "text": {
-          "text": [ "Alright, we'll move on." ]
+          "text": [ "Sorry, we didn't get that right. Let's start capturing the name again." ]
         },
         "languageCode": "en"
       } ],
-      "setParameterActions": [ {
-        "parameter": "$flow.user_provided_first_name",
-        "value": "$flow.format_first_name"
-      }, {
-        "parameter": "$flow.user_provided_last_name",
-        "value": "$flow.format_last_name"
-      }, {
-        "parameter": "$flow.user_provided_middle_name",
-        "value": "$flow.format_middle_name"
-      } ],
-      "nextActionOverride": {
-      
-      }
-    },
-    "targetFlow": "Telephone Number Collection",
-    "name": "d63d7d1e-ebd6-4ed8-98ae-cd1502fa52a0"
-  }, {
-    "intent": "prebuilt_components_confirmation_yes",
-    "condition": "$flow.count = 2 AND $flow.user_provided_full_name.middle-name = NULL",
-    "triggerFulfillment": {
       "webhook": "Gemini",
       "tag": "askGemini",
-      "setParameterActions": [ {
-        "parameter": "$flow.user_provided_first_name",
-        "value": "$flow.format_first_name"
-      }, {
-        "parameter": "$flow.user_provided_last_name",
-        "value": "$flow.format_last_name"
-      } ],
       "nextActionOverride": {
       
       }
     },
-    "targetPage": "\u003e collect if middle name exists",
-    "name": "abb9f9a8-6600-4a35-8ddc-3e61ecd053cb"
+    "targetPage": "\u003e collect first name",
+    "name": "c081a7e8-a177-4675-b225-cc55c264db2e"
   }, {
-    "intent": "prebuilt_components_confirmation_yes",
-    "condition": "$flow.format_first_name != null AND $flow.format_last_name != null",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.user_provided_first_name",
-        "value": "$flow.format_first_name"
-      }, {
-        "parameter": "$flow.user_provided_last_name",
-        "value": "$flow.format_last_name"
-      } ]
-    },
-    "targetPage": "\u003e collect if middle name exists",
-    "name": "58284f52-ecd4-4b74-b8c8-cceedb74662f"
-  }, {
-    "intent": "prebuilt_components_escalate_human_agent",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "transfer_reason",
-        "value": "agent"
-      } ]
-    },
-    "targetPage": "end escalation",
-    "name": "0f4343d8-7f66-4f91-9407-dcf89ed203e2"
-  }, {
-    "condition": "$flow.count = 1 AND $flow.user_provided_full_name.name.name != NULL",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.format_last_name",
-        "value": null
-      }, {
-        "parameter": "$flow.format_middle_name",
-        "value": null
-      } ]
-    },
-    "targetPage": "\u003e collect only first name",
-    "name": "69f2ed2a-4904-4b43-bfb8-71efc86e6b6f"
-  }, {
-    "condition": "$session.params.from_waiting_room_reusable_flow = true",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "from_waiting_room_reusable_flow",
-        "value": null
-      } ]
-    },
-    "name": "6897026e-3e3a-49c0-a248-e4fe3b8028e2"
-  }, {
-    "condition": "$session.params.waiting_room_event_handler = true",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "waiting_room_event_handler",
-        "value": null
-      } ]
-    },
-    "targetPage": "end failure",
-    "name": "954f4ac2-c482-4b41-a8db-b86a65afd4ff"
-  }, {
-    "condition": "$flow.user_provided_full_name.first-name != null AND $flow.user_provided_full_name.last-name != null AND $flow.user_provided_full_name.middle-name = null",
+    "intent": "error_light",
     "triggerFulfillment": {
       "messages": [ {
         "text": {
-          "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_first_name\u003c/say-as\u003e\u003c/prosody\u003e, and your last name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_last_name \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
+          "text": [ "Sorry, we didn't get that right. Let's start capturing the name again." ]
         },
         "languageCode": "en"
       } ],
-      "setParameterActions": [ {
-        "parameter": "$flow.format_first_name",
-        "value": "$flow.user_provided_full_name.first-name"
-      }, {
-        "parameter": "$flow.format_last_name",
-        "value": "$flow.user_provided_full_name.last-name"
-      }, {
-        "parameter": "$flow.format_middle_name_ssml",
-        "value": null
-      } ]
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
     },
-    "name": "eb585b47-202d-4693-a5b2-a3b407c674ce"
-  }, {
-    "condition": "$flow.user_provided_full_name.name.name != NULL AND $flow.user_provided_full_name.middle-name = NULL AND $flow.count = 2",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_first_name\u003c/say-as\u003e\u003c/prosody\u003e, and your last name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_last_name\u003c/say-as\u003e\u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
-        },
-        "languageCode": "en"
-      } ],
-      "setParameterActions": [ {
-        "parameter": "$flow.format_middle_name",
-        "value": null
-      }, {
-        "parameter": "$flow.last_prompt",
-        "value": "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_first_name\u003c/say-as\u003e\u003c/prosody\u003e, and your last name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_last_name\u003c/say-as\u003e\u003c/prosody\u003e. Did I spell your full name correctly?\u003c/speak\u003e"
-      } ]
-    },
-    "name": "9da45c49-1915-4a20-b708-0995cc7f14e9"
-  }, {
-    "condition": "$flow.user_provided_full_name.first-name != NULL AND $flow.user_provided_full_name.last-name != NULL AND $flow.user_provided_full_name.middle-name != NULL",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_first_name \u003c/say-as\u003e\u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_last_name\u003c/say-as\u003e\u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.format_middle_name\u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
-        },
-        "languageCode": "en"
-      } ],
-      "setParameterActions": [ {
-        "parameter": "$flow.format_first_name",
-        "value": "$flow.user_provided_full_name.first-name"
-      }, {
-        "parameter": "$flow.format_last_name",
-        "value": "$flow.user_provided_full_name.last-name"
-      }, {
-        "parameter": "$flow.format_middle_name",
-        "value": "$flow.user_provided_full_name.middle-name"
-      }, {
-        "parameter": "$flow.full_name_separate",
-        "value": null
-      }, {
-        "parameter": "$flow.last_prompt",
-        "value": "\u003cspeak\u003e To confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_first_name \u003c/say-as\u003e \u003c/prosody\u003e, your last name is  \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_last_name \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_middle_name \u003c/say-as\u003e \u003c/prosody\u003e. Did I spell your full name correctly?  \u003c/speak\u003e"
-      } ]
-    },
-    "name": "8e76d07c-c18e-49f4-aeba-fab15908bfba"
-  }, {
-    "condition": "$flow.user_provided_full_name.name.name != NULL AND $flow.user_provided_full_name.middle-name != NULL",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_first_name\u003c/say-as\u003e\u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_last_name \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_middle_name\u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
-        },
-        "languageCode": "en"
-      } ],
-      "setParameterActions": [ {
-        "parameter": "$flow.format_middle_name",
-        "value": "$flow.user_provided_full_name.middle-name"
-      }, {
-        "parameter": "$flow.last_prompt",
-        "value": "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_first_name \u003c/say-as\u003e \u003c/prosody\u003e, your last name is  \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_last_name \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_middle_name \u003c/say-as\u003e \u003c/prosody\u003e. Did I spell your full name correctly?  \u003c/speak\u003e"
-      } ]
-    },
-    "name": "6b625af7-e5d9-46e2-9f7e-870737d76934"
-  }, {
-    "condition": "$flow.user_provided_full_name.name.name != NULL AND $flow.count \u003e= 3",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "\u003cspeak\u003eTo confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_first_name \u003c/say-as\u003e \u003c/prosody\u003e, your last name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_last_name \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_middle_name \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your full name correctly?\u003c/speak\u003e" ]
-        },
-        "languageCode": "en"
-      } ],
-      "setParameterActions": [ {
-        "parameter": "$flow.last_prompt",
-        "value": "\u003cspeak\u003e To confirm, your first name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_first_name \u003c/say-as\u003e \u003c/prosody\u003e, your last name is  \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_last_name \u003c/say-as\u003e \u003c/prosody\u003e and your middle name is \u003cprosody rate='slow'\u003e \u003csay-as interpret-as=\"verbatim\"\u003e $flow.format_middle_name \u003c/say-as\u003e \u003c/prosody\u003e. Did I spell your full name correctly?  \u003c/speak\u003e"
-      } ]
-    },
-    "name": "95ac4f8f-72c8-4c85-93fc-cd26d6152d04"
+    "targetPage": "\u003e collect first name",
+    "name": "8916460b-c508-42c0-8536-73d62c9daa1a"
   } ],
   "eventHandlers": [ {
     "event": "sys.no-input-1",
@@ -297,7 +159,6 @@
     },
     "name": "d7278756-4f81-4c95-bead-b506961ed79f"
   }, {
-    "targetPage": "end failure",
     "event": "sys.no-input-3",
     "triggerFulfillment": {
       "setParameterActions": [ {
@@ -374,5 +235,16 @@
       }
     },
     "name": "7555fada-9fa1-4468-ab5b-3182feeb1570"
+  }, {
+    "targetFlow": "Telephone Number Collection",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
+    },
+    "name": "47f574ee-74bf-4744-b618-d699d268c3d7"
   } ]
 }

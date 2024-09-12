@@ -55,7 +55,6 @@
           },
           "name": "ed6e3da8-d72f-4096-8ee7-d529d65e8bc9"
         }, {
-          "targetPage": "end failure",
           "event": "sys.no-input-3",
           "triggerFulfillment": {
             "setParameterActions": [ {
@@ -65,7 +64,6 @@
           },
           "name": "9d248fa7-d570-4a73-8150-11e2f9ec2701"
         }, {
-          "targetPage": "end failure",
           "event": "sys.no-match-3",
           "triggerFulfillment": {
             "setParameterActions": [ {
@@ -98,94 +96,6 @@
     } ]
   },
   "transitionRoutes": [ {
-    "intent": "prebuilt_components_telephone_number_collection_incorrect_country_code",
-    "condition": "$flow.invalid_cc_counter \u003c 2",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "Ok, what is your country name or code?" ]
-        },
-        "languageCode": "en"
-      } ],
-      "setParameterActions": [ {
-        "parameter": "$flow.country_code",
-        "value": null
-      }, {
-        "parameter": "$flow.invalid_cc_counter",
-        "value": "$sys.func.ADD($flow.invalid_cc_counter, 1)"
-      }, {
-        "parameter": "$flow.last_prompt",
-        "value": "What is your country name or code?"
-      }, {
-        "parameter": "$flow.playback_counter",
-        "value": 0
-      } ]
-    },
-    "targetPage": "\u003e collect country code",
-    "name": "bea32878-ee8e-40c7-bc07-950d8dd916a5"
-  }, {
-    "intent": "prebuilt_components_telephone_number_collection_incorrect_country_code",
-    "condition": "$flow.invalid_cc_counter = 2",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.failure_message",
-        "value": "Sorry, we have used too many tries and failed to collect your response."
-      } ]
-    },
-    "targetPage": "end failure",
-    "name": "875d51bf-3190-435c-957b-212905f96e44"
-  }, {
-    "intent": "prebuilt_components_confirmation_no_1",
-    "condition": "$flow.invalid_cc_counter \u003c 2",
-    "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "Ok, what is your country name or code?" ]
-        },
-        "languageCode": "en"
-      } ],
-      "setParameterActions": [ {
-        "parameter": "$flow.country_code",
-        "value": null
-      }, {
-        "parameter": "$flow.invalid_cc_counter",
-        "value": "$sys.func.ADD($flow.invalid_cc_counter, 1)"
-      }, {
-        "parameter": "$flow.last_prompt",
-        "value": "What is your country name or code?"
-      }, {
-        "parameter": "$flow.playback_counter",
-        "value": 0
-      } ]
-    },
-    "targetPage": "\u003e collect country code",
-    "name": "c4379f0c-eeed-44ec-83bc-02f8b3bc4abe"
-  }, {
-    "intent": "prebuilt_components_confirmation_no_1",
-    "condition": "$flow.invalid_cc_counter = 2",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.failure_message",
-        "value": "Sorry, we have used too many tries and failed to collect your response."
-      } ]
-    },
-    "targetPage": "end failure",
-    "name": "b714632c-6f4c-4199-8162-7760e694e095"
-  }, {
-    "intent": "prebuilt_components_escalate_human_agent_1",
-    "triggerFulfillment": {
-    
-    },
-    "targetPage": "end escalation",
-    "name": "9f4bc3b0-ff0c-460a-83fd-9d3a9db2cb44"
-  }, {
-    "intent": "prebuilt_components_playback",
-    "triggerFulfillment": {
-    
-    },
-    "targetPage": "end playback",
-    "name": "9ff17fc1-d3c5-4410-9188-02bb8562ef90"
-  }, {
     "intent": "prebuilt_components_confirmation_yes_1",
     "triggerFulfillment": {
       "messages": [ {
@@ -202,10 +112,13 @@
         "value": "Please say your telephone number."
       } ]
     },
+    "targetPage": "\u003e confirm telephone number",
     "name": "c707c3c3-fbf1-469f-8cf4-71a936ad7559"
   }, {
     "condition": "$page.params.status = FINAL",
     "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "$flow.complete_phonenumber",
         "value": "$sys.func.CONCATENATE(\"+\", $flow.country_code, $flow.telephone_number)"
@@ -215,9 +128,12 @@
       }, {
         "parameter": "$flow.to_phone_number",
         "value": "$sys.func.TO_PHONE_NUMBER($sys.func.CONCATENATE(\"+\", $flow.country_code, $flow.telephone_number))"
-      } ]
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "telephone number validation",
+    "targetPage": "\u003e confirm telephone number",
     "name": "5b796f88-2bca-4f38-bbfa-1d1be80450c5"
   }, {
     "condition": "$session.params.from_waiting_room_reusable_flow = true",
@@ -233,16 +149,48 @@
         "value": null
       } ]
     },
+    "targetPage": "\u003e confirm telephone number",
     "name": "bbcf7bf9-48fa-46ee-bfd8-8533ed61277a"
   }, {
     "condition": "$session.params.waiting_room_event_handler = true",
     "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "waiting_room_event_handler",
         "value": null
-      } ]
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "end failure",
+    "targetPage": "\u003e confirm telephone number",
     "name": "cfb90fe8-0d72-43f7-ad79-ebe673a502a6"
+  } ],
+  "eventHandlers": [ {
+    "targetFlow": "Name Collection",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "enableGenerativeFallback": true,
+      "nextActionOverride": {
+      
+      }
+    },
+    "name": "e07ae71c-fe83-431e-98e8-63bae88d980d"
+  }, {
+    "targetPage": "\u003e confirm telephone number",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Can you repeat your phone number?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "nextActionOverride": {
+      
+      }
+    },
+    "name": "782a3fd1-7c0b-4949-b9d7-e489a50c4867"
   } ]
 }

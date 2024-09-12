@@ -22,17 +22,16 @@
   "transitionRoutes": [ {
     "intent": "prebuilt_components_confirmation_yes_1",
     "triggerFulfillment": {
-      "messages": [ {
-        "text": {
-          "text": [ "Please say your telephone number." ]
-        },
-        "languageCode": "en"
-      } ]
+      "webhook": "Gemini",
+      "tag": "askGemini",
+      "nextActionOverride": {
+      
+      }
     },
-    "targetPage": "\u003e collect telephone number",
+    "targetPage": "end playback",
     "name": "bc47b8c0-4f91-4fa5-aa2c-4b6f65def696"
   }, {
-    "intent": "prebuilt_components_confirmation_no_1",
+    "intent": "red_light1",
     "condition": "$flow.invalid_cc_counter \u003c 2",
     "triggerFulfillment": {
       "messages": [ {
@@ -49,38 +48,28 @@
         "value": "$sys.func.ADD($flow.invalid_cc_counter,1)"
       } ]
     },
-    "targetPage": "\u003e collect country code",
+    "targetFlow": "Name Collection",
     "name": "8cfc8261-14d2-4cff-807d-a67a6d9c9d92"
   }, {
-    "intent": "prebuilt_components_confirmation_no_1",
+    "intent": "red_light1",
     "condition": "$flow.invalid_cc_counter = 2",
     "triggerFulfillment": {
     
     },
-    "targetPage": "end failure",
+    "targetPage": "\u003e confirm telephone number",
     "name": "ba3f8182-ba1a-4e84-83f6-dd4a62b3d972"
   }, {
     "intent": "prebuilt_components_escalate_human_agent_1",
     "triggerFulfillment": {
     
     },
-    "targetPage": "end escalation",
     "name": "905093de-96dd-42e7-b4a6-431953c4a7b7"
-  }, {
-    "intent": "prebuilt_components_playback",
-    "triggerFulfillment": {
-      "setParameterActions": [ {
-        "parameter": "$flow.playback_counter",
-        "value": "$sys.func.ADD($flow.playback_counter,1)"
-      } ]
-    },
-    "name": "03aac7ba-cf7d-4c63-8f0b-e4dec56afad9"
   }, {
     "condition": "$flow.playback_counter = 3",
     "triggerFulfillment": {
     
     },
-    "targetPage": "end failure",
+    "targetFlow": "Name Collection",
     "name": "813ce748-19c7-459a-9b1c-b715dfee086b"
   }, {
     "condition": "$flow.country_code = NULL AND $flow.telephone_number = NULL",
@@ -96,7 +85,7 @@
         "value": "Currently we have not collected anything. Please start by saying your country name or code."
       } ]
     },
-    "targetPage": "\u003e collect country code",
+    "targetFlow": "Name Collection",
     "name": "e016694e-3e20-4a90-b3e0-3c5c3c0a764a"
   }, {
     "condition": "$flow.country_code != NULL AND $flow.telephone_number = NULL",
@@ -137,13 +126,18 @@
     },
     "name": "e3e6d494-2f0c-4baf-84c9-8dc3129095e1"
   }, {
-    "targetPage": "end failure",
+    "targetPage": "\u003e confirm telephone number",
     "event": "sys.no-input-3",
     "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "transfer_reason",
         "value": "max_no_input"
-      } ]
+      } ],
+      "nextActionOverride": {
+      
+      }
     },
     "name": "efc556e7-beee-4a9b-b3ec-37afbb610815"
   }, {
@@ -169,13 +163,18 @@
     },
     "name": "912957f3-dd49-481b-814e-561b46b4fc81"
   }, {
-    "targetPage": "end failure",
     "event": "sys.no-match-3",
     "triggerFulfillment": {
+      "webhook": "Gemini",
+      "tag": "askGemini",
       "setParameterActions": [ {
         "parameter": "transfer_reason",
         "value": "max_no_match"
-      } ]
+      } ],
+      "enableGenerativeFallback": true,
+      "nextActionOverride": {
+      
+      }
     },
     "name": "51129757-ed49-465c-b197-37f03a28db8d"
   } ]

@@ -1,6 +1,17 @@
 {
   "trainingPhrases": [ {
     "parts": [ {
+      "text": "i need to file ",
+      "auto": true
+    }, {
+      "text": "bankruptcy",
+      "parameterId": "bankruptcy",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
       "text": "Help me.",
       "auto": true
     } ],
@@ -8,22 +19,21 @@
     "languageCode": "en"
   }, {
     "parts": [ {
-      "text": "I am in debt and don't know what to do.",
-      "auto": true
+      "text": "I am in debt and "
+    }, {
+      "text": "don't know what to do",
+      "parameterId": "bankruptcy"
+    }, {
+      "text": "."
     } ],
     "repeatCount": 1,
     "languageCode": "en"
   }, {
     "parts": [ {
-      "text": "i need to file bankruptcy.",
-      "auto": true
-    } ],
-    "repeatCount": 1,
-    "languageCode": "en"
-  }, {
-    "parts": [ {
-      "text": "I would like to file bankruptcy",
-      "auto": true
+      "text": "I would like to file "
+    }, {
+      "text": "bankruptcy",
+      "parameterId": "bankruptcy"
     } ],
     "repeatCount": 1,
     "languageCode": "en"
