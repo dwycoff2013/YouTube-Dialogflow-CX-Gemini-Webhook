@@ -20,7 +20,7 @@
     } ]
   },
   "transitionRoutes": [ {
-    "intent": "prebuilt_components_confirmation_yes_1",
+    "intent": "green_light",
     "triggerFulfillment": {
       "webhook": "Gemini",
       "tag": "askGemini",
@@ -28,7 +28,7 @@
       
       }
     },
-    "targetPage": "end playback",
+    "targetPage": "end success",
     "name": "bc47b8c0-4f91-4fa5-aa2c-4b6f65def696"
   }, {
     "intent": "red_light1",
